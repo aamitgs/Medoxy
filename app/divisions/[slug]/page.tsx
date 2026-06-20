@@ -1,0 +1,72 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Award, BadgeCheck, Globe2, Layers } from "lucide-react";
+import { Badge } from "@/components/Badge";
+import { ProductExplorer } from "@/components/ProductExplorer";
+import { SectionHeader } from "@/components/SectionHeader";
+import { divisions, products } from "@/data/site";
+
+export function generateStaticParams() {
+  return divisions.map((division) => ({ slug: division.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const division = divisions.find((item) => item.slug === slug);
+  return {
+    title: division ? `${division.name} Division` : "Division",
+    description: division?.description,
+  };
+}
+
+export default async function DivisionDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const division = divisions.find((item) => item.slug === slug);
+  if (!division) notFound();
+  const count = products.filter((product) => product.division === division.slug).length;
+  const statCards = [
+    [Layers, "Total Products", `${count}+`],
+    [Award, "Years Experience", "10+"],
+    [BadgeCheck, "Quality Certifications", "WHO-GMP"],
+    [Globe2, "Distribution Reach", "India"],
+  ];
+
+  return (
+    <>
+      <section className="section-pad">
+        <div className="container-grid grid gap-10 lg:grid-cols-[1fr_.82fr]">
+          <div>
+            <nav className="mb-5 text-sm font-bold text-medoxy-muted">
+              <Link href="/">Home</Link> / <Link href="/divisions">Divisions</Link> / {division.name}
+            </nav>
+            <Badge tone="blue">Specialist Division</Badge>
+            <h1 className="mt-5 text-5xl font-black leading-tight text-medoxy-text md:text-7xl">{division.name}</h1>
+            <p className="mt-6 text-xl leading-9 text-medoxy-muted">{division.description}</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {["WHO-GMP Standards", "Specialist Division", "Quality Assured", "Extensive Product Range"].map((item) => <Badge key={item} tone="neutral">{item}</Badge>)}
+            </div>
+            <ul className="mt-8 grid gap-3 text-medoxy-muted">
+              {division.benefits.map((benefit) => <li key={benefit} className="rounded-lg border border-medoxy-border bg-white px-4 py-3 font-semibold">{benefit}</li>)}
+            </ul>
+          </div>
+          <div className="grid gap-4 rounded-lg border border-medoxy-border bg-white/75 p-5 shadow-soft backdrop-blur md:grid-cols-2">
+            {statCards.map(([Icon, label, value]) => (
+              <div key={String(label)} className="rounded-lg border border-medoxy-border bg-white p-5">
+                <Icon className="mb-5 text-medoxy-primary" size={30} />
+                <p className="text-3xl font-black text-medoxy-text">{String(value)}</p>
+                <p className="mt-2 text-sm font-bold text-medoxy-muted">{String(label)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section-pad bg-white/45">
+        <div className="container-grid">
+          <SectionHeader eyebrow="Products" title={`${division.name} product range`} text="Search and filter division products, then request detailed product information from Medoxy." />
+          <ProductExplorer divisionSlug={division.slug} />
+        </div>
+      </section>
+    </>
+  );
+}
