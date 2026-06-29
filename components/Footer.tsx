@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { divisions, nav, site } from "@/data/site";
 import { MedoxyLogo } from "./MedoxyLogo";
 import { SocialLinks } from "./SocialLinks";
@@ -63,16 +63,9 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5">
-        <div className="grid w-full gap-4 px-4 text-center text-sm text-white/55 sm:px-6 lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:px-10 lg:text-left">
+        <div className="grid w-full gap-4 px-4 text-center text-sm text-white/55 sm:px-6 md:grid-cols-2 md:items-center md:px-10 md:text-left">
           <p className="lg:justify-self-start">© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <div className="mx-auto inline-flex h-12 max-w-full overflow-hidden rounded-full border border-white/15 bg-[#2b2b2d] text-xs font-black uppercase tracking-wide shadow-sm sm:text-sm">
-            <span className="inline-flex items-center gap-2 whitespace-nowrap bg-medoxy-secondary px-4 text-white sm:px-6">
-              <ShieldCheck size={18} className="shrink-0" />
-              Healthcare
-            </span>
-            <span className="inline-flex items-center whitespace-nowrap px-4 text-white/70 sm:px-6">Information Protected</span>
-          </div>
-          <p className="lg:justify-self-end lg:text-right">
+          <p className="md:justify-self-end md:text-right">
             Made by{" "}
             <a className="font-bold text-white transition hover:text-medoxy-primary" href="https://www.edata4you.com/" target="_blank" rel="noreferrer">
               eData4You
