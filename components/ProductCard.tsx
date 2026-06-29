@@ -22,11 +22,13 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="overflow-hidden rounded-2xl border border-medoxy-border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
-      <div className="relative aspect-[4/3] bg-medoxy-background">
-        <HealthcareVisual title={product.name} subtitle={product.category} variant="product" className="h-full min-h-0 rounded-none border-0 shadow-none" />
-        <div className="absolute left-4 top-4 flex gap-2">
+      <div className="bg-medoxy-background">
+        <div className="flex min-h-14 flex-wrap items-center gap-2 px-4 py-3">
           {product.featured ? <Badge tone="red">Featured</Badge> : null}
           {product.popular ? <Badge>Popular</Badge> : null}
+        </div>
+        <div className="aspect-[4/3]">
+          <HealthcareVisual title={product.name} subtitle={product.category} variant="product" className="h-full min-h-0 rounded-none border-0 shadow-none" />
         </div>
       </div>
       <div className="p-5">
