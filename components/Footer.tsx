@@ -50,7 +50,16 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5">
-        <p className="container-grid text-sm text-white/55">© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+        <div className="container-grid flex flex-col gap-2 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
+          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <p>
+            Made by{" "}
+            <a className="font-bold text-white transition hover:text-medoxy-primary" href="https://www.edata4you.com/" target="_blank" rel="noreferrer">
+              eData4You
+            </a>
+            {" "}with ❤️ in Delhi,India
+          </p>
+        </div>
       </div>
     </footer>
   );
