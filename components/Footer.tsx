@@ -1,13 +1,20 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { divisions, nav, site } from "@/data/site";
 import { MedoxyLogo } from "./MedoxyLogo";
 import { SocialLinks } from "./SocialLinks";
 
 export function Footer() {
+  const legalLinks = [
+    { label: "Sitemap", href: "/sitemap.xml" },
+    { label: "Disclaimer", href: "/terms" },
+    { label: "Terms of Use", href: "/terms" },
+    { label: "Privacy Policy", href: "/privacy" },
+  ];
+
   return (
     <footer className="border-t border-medoxy-border bg-medoxy-text text-white">
-      <div className="container-grid grid gap-10 py-14 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div className="container-grid grid gap-10 py-14 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
         <div>
           <div className="mb-4 flex items-center gap-3">
             <span className="grid h-16 w-24 place-items-center rounded-lg bg-white">
@@ -48,11 +55,24 @@ export function Footer() {
             <Link href="/faq">FAQ</Link>
           </div>
         </div>
+        <div>
+          <h2 className="mb-4 text-sm font-black uppercase tracking-wide">Resources</h2>
+          <div className="grid gap-3 text-sm text-white/70">
+            {legalLinks.map((item) => <Link key={item.label} href={item.href}>{item.label}</Link>)}
+          </div>
+        </div>
       </div>
       <div className="border-t border-white/10 py-5">
-        <div className="container-grid flex flex-col gap-2 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>
+        <div className="grid w-full gap-4 px-4 text-center text-sm text-white/55 sm:px-6 lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:px-10 lg:text-left">
+          <p className="lg:justify-self-start">© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <div className="mx-auto inline-flex h-12 max-w-full overflow-hidden rounded-full border border-white/15 bg-[#2b2b2d] text-xs font-black uppercase tracking-wide shadow-sm sm:text-sm">
+            <span className="inline-flex items-center gap-2 whitespace-nowrap bg-medoxy-secondary px-4 text-white sm:px-6">
+              <ShieldCheck size={18} className="shrink-0" />
+              Healthcare
+            </span>
+            <span className="inline-flex items-center whitespace-nowrap px-4 text-white/70 sm:px-6">Information Protected</span>
+          </div>
+          <p className="lg:justify-self-end lg:text-right">
             Made by{" "}
             <a className="font-bold text-white transition hover:text-medoxy-primary" href="https://www.edata4you.com/" target="_blank" rel="noreferrer">
               eData4You

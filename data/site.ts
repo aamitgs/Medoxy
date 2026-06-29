@@ -27,7 +27,6 @@ export const nav = [
   { label: "About", href: "/about" },
   { label: "Division", href: "/divisions" },
   { label: "Quality", href: "/manufacturing-quality" },
-  { label: "R&D", href: "/research-development" },
   { label: "Compliance", href: "/certifications-compliance" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
