@@ -13,7 +13,7 @@ export default function AboutPage() {
     ["History", "The brand is built around practical healthcare categories, disciplined product information, and responsive support for providers, distributors, and institutions."],
     ["Mission & Vision", "Our mission is dependable healthcare access through transparent product information. Our vision is to become a trusted pharmaceutical partner known for quality and professionalism."],
     ["Leadership", "Medoxy’s leadership approach emphasizes ethical healthcare marketing, product reliability, and long-term partner relationships."],
-    ["Infrastructure", "The company supports product discovery through organized divisions, manufacturing coordination, quality documentation, and digital inquiry workflows."],
+    ["Infrastructure", "The company supports gastroenterology product discovery through manufacturing coordination, quality documentation, and digital inquiry workflows."],
     ["Quality Commitment", "Every product category is positioned around quality assurance, compliance awareness, and clear healthcare communication."],
   ];
 

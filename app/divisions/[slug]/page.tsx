@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const division = divisions.find((item) => item.slug === slug);
   return {
-    title: division ? `${division.name} Division` : "Division",
+    title: division ? `${division.name}` : "Division",
     description: division?.description,
   };
 }
@@ -38,13 +38,13 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
         <div className="container-grid grid gap-10 lg:grid-cols-[1fr_.82fr]">
           <div>
             <nav className="mb-5 text-sm font-bold text-medoxy-muted">
-              <Link href="/">Home</Link> / <Link href="/divisions">Divisions</Link> / {division.name}
+              <Link href="/">Home</Link> / <Link href="/divisions">Division</Link> / {division.name}
             </nav>
-            <Badge tone="blue">Specialist Division</Badge>
+            <Badge tone="blue">Gastroenterology</Badge>
             <h1 className="mt-5 text-5xl font-black leading-tight text-medoxy-text md:text-7xl">{division.name}</h1>
             <p className="mt-6 text-xl leading-9 text-medoxy-muted">{division.description}</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              {["WHO-GMP Standards", "Specialist Division", "Quality Assured", "Extensive Product Range"].map((item) => <Badge key={item} tone="neutral">{item}</Badge>)}
+              {["WHO-GMP Standards", "Gastroenterology", "Quality Assured", "Digestive Health Range"].map((item) => <Badge key={item} tone="neutral">{item}</Badge>)}
             </div>
             <ul className="mt-8 grid gap-3 text-medoxy-muted">
               {division.benefits.map((benefit) => <li key={benefit} className="rounded-lg border border-medoxy-border bg-white px-4 py-3 font-semibold">{benefit}</li>)}
@@ -63,7 +63,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
       </section>
       <section className="section-pad bg-white/45">
         <div className="container-grid">
-          <SectionHeader eyebrow="Products" title={`${division.name} product range`} text="Search and filter division products, then request detailed product information from Medoxy." />
+          <SectionHeader eyebrow="Products" title={`${division.name} product range`} text="Search and filter gastroenterology products, then request detailed product information from Medoxy." />
           <ProductExplorer divisionSlug={division.slug} />
         </div>
       </section>

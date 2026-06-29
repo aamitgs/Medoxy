@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Menu, Send, X } from "lucide-react";
 import { useState } from "react";
 import { nav, site } from "@/data/site";
+import { MedoxyLogo } from "./MedoxyLogo";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -12,9 +13,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-medoxy-border/80 bg-[#F0EADF]/88 backdrop-blur-xl">
       <div className="container-grid flex h-20 items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3" aria-label="Medoxy home">
-          <span className="grid h-11 w-11 place-items-center rounded-lg bg-medoxy-primary text-lg font-black text-white">
-            M
-          </span>
+          <MedoxyLogo className="h-14 w-24 shrink-0" />
           <span>
             <span className="block text-lg font-black leading-none text-medoxy-text">{site.shortName}</span>
             <span className="text-xs font-semibold uppercase tracking-wide text-medoxy-muted">Healthcare Pvt Ltd</span>

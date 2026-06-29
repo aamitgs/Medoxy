@@ -18,7 +18,7 @@ export default function CertificationsPage() {
   return (
     <section className="section-pad">
       <div className="container-grid">
-        <SectionHeader eyebrow="Certifications & Compliance" title="A compliance-first presentation for healthcare confidence." text="Medoxy emphasizes transparent documentation, regulatory awareness, and quality standards across its product divisions." />
+        <SectionHeader eyebrow="Certifications & Compliance" title="A compliance-first presentation for healthcare confidence." text="Medoxy emphasizes transparent documentation, regulatory awareness, and quality standards across its gastroenterology products." />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {items.map(([Icon, title, text]) => (
             <article key={String(title)} className="rounded-lg border border-medoxy-border bg-white p-6 shadow-sm">

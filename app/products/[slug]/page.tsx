@@ -36,7 +36,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <HealthcareVisual title={product.name} subtitle={product.category} variant="product" className="min-h-[520px]" />
           <div>
             <nav className="mb-5 text-sm font-bold text-medoxy-muted">
-              <Link href="/">Home</Link> / <Link href="/divisions">Divisions</Link> / <Link href={`/divisions/${division?.slug}`}>{division?.name}</Link> / {product.name}
+              <Link href="/">Home</Link> / <Link href="/divisions">Division</Link> / <Link href={`/divisions/${division?.slug}`}>{division?.name}</Link> / {product.name}
             </nav>
             <Badge tone="blue">{product.category}</Badge>
             <h1 className="mt-5 text-5xl font-black leading-tight text-medoxy-text md:text-7xl">{product.name}</h1>

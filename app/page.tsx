@@ -18,7 +18,7 @@ export default function Home() {
               Medoxy Healthcare Pvt Ltd
             </h1>
             <p className="mt-6 max-w-2xl text-xl leading-9 text-medoxy-muted">
-              Premium pharmaceutical product divisions, quality-led manufacturing partnerships, and responsive healthcare inquiry support for providers, distributors, and institutions.
+              Premium gastroenterology product support, quality-led manufacturing partnerships, and responsive healthcare inquiry support for providers, distributors, and institutions.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="inline-flex items-center gap-2 rounded-lg bg-medoxy-secondary px-6 py-4 font-black text-white shadow-soft" href="/contact">
@@ -45,7 +45,7 @@ export default function Home() {
 
       <section className="section-pad bg-white/45">
         <div className="container-grid">
-          <SectionHeader eyebrow="About Medoxy" title="Credible healthcare solutions with a premium division-led product experience." text="Medoxy brings healthcare expertise, reliable product organization, and inquiry-led support together for hospitals, clinics, pharmacies, distributors, and healthcare institutions." />
+          <SectionHeader eyebrow="About Medoxy" title="Credible healthcare solutions with a premium gastroenterology product experience." text="Medoxy brings healthcare expertise, reliable product organization, and inquiry-led support together for hospitals, clinics, pharmacies, distributors, and healthcare institutions." />
           <div className="grid gap-6 md:grid-cols-3">
             {[
               ["Mission", "To make dependable healthcare products easier to evaluate, source, and support through transparent product information."],
@@ -63,7 +63,7 @@ export default function Home() {
 
       <section className="section-pad">
         <div className="container-grid">
-          <SectionHeader eyebrow="Product Divisions" title="Therapy areas built for quick discovery and qualified inquiries." text="Filterable, no-commerce product architecture centered on clinical relevance and distributor conversations." />
+          <SectionHeader eyebrow="Division" title="Digestive health products built for quick discovery and qualified inquiries." text="Filterable, no-commerce product architecture centered on clinical relevance and distributor conversations." />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {divisions.map((division) => <DivisionCard key={division.slug} division={division} />)}
           </div>

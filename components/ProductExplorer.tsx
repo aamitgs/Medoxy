@@ -2,7 +2,7 @@
 
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
-import { divisions, products } from "@/data/site";
+import { products } from "@/data/site";
 import { ProductCard } from "./ProductCard";
 
 export function ProductExplorer({ divisionSlug }: { divisionSlug?: string }) {
@@ -31,12 +31,7 @@ export function ProductExplorer({ divisionSlug }: { divisionSlug?: string }) {
       {!divisionSlug ? (
         <div className="sticky top-20 z-30 -mx-4 overflow-x-auto border-y border-medoxy-border bg-[#F0EADF]/90 px-4 py-3 backdrop-blur md:mx-0 md:rounded-lg md:border">
           <div className="flex min-w-max gap-2">
-            <a className="rounded-lg bg-medoxy-primary px-4 py-2 text-sm font-bold text-white" href="/divisions">All Divisions</a>
-            {divisions.map((division) => (
-              <a key={division.slug} className="rounded-lg border border-medoxy-border bg-white px-4 py-2 text-sm font-bold text-medoxy-muted" href={`/divisions/${division.slug}`}>
-                {division.name}
-              </a>
-            ))}
+            <a className="rounded-lg bg-medoxy-primary px-4 py-2 text-sm font-bold text-white" href="/divisions">Division</a>
           </div>
         </div>
       ) : null}

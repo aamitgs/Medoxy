@@ -13,7 +13,7 @@ export default function ResearchDevelopmentPage() {
     [Lightbulb, "Innovation", "Portfolio planning guided by therapeutic relevance, market need, and healthcare usability."],
     [FlaskConical, "Product Development", "Composition selection, dosage planning, packaging review, and information readiness."],
     [Microscope, "Research Capabilities", "Clinical category research, competitive mapping, and quality documentation review."],
-    [Route, "Future Initiatives", "Expansion across specialty divisions, institutional products, and partner-led access channels."],
+    [Route, "Future Initiatives", "Expansion across gastroenterology products, institutional products, and partner-led access channels."],
   ];
 
   return (

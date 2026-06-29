@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { InquiryForm } from "@/components/InquiryForm";
 import { SectionHeader } from "@/components/SectionHeader";
+import { SocialLinks } from "@/components/SocialLinks";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -28,6 +29,12 @@ export default function ContactPage() {
             <div className="rounded-lg border border-medoxy-border bg-white p-6">
               <Phone className="mb-4 text-medoxy-primary" />
               <p className="font-black text-medoxy-text">{site.phone}</p>
+            </div>
+            <div className="rounded-lg border border-medoxy-border bg-white p-6">
+              <h2 className="font-black text-medoxy-text">Social Media</h2>
+              <div className="mt-4">
+                <SocialLinks tone="dark" />
+              </div>
             </div>
             <div className="overflow-hidden rounded-lg border border-medoxy-border bg-white">
               <iframe

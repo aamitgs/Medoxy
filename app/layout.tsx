@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Medoxy Healthcare Pvt Ltd",
   },
   description:
-    "Medoxy Healthcare Pvt Ltd is an inquiry-focused healthcare and pharmaceutical company showcasing product divisions, manufacturing quality, compliance, and partnership opportunities.",
+    "Medoxy Healthcare Pvt Ltd is an inquiry-focused healthcare and pharmaceutical company showcasing gastroenterology products, manufacturing quality, compliance, and partnership opportunities.",
   openGraph: {
     title: "Medoxy Healthcare Pvt Ltd",
     description: "Premium healthcare and pharmaceutical product division experience.",
