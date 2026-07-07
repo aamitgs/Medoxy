@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FileText, Send } from "lucide-react";
 import { divisions } from "@/data/site";
@@ -13,6 +14,7 @@ export type Product = {
   dosageForm: string;
   packaging: string;
   description: string;
+  image?: string;
   featured: boolean;
   popular: boolean;
 };
@@ -27,9 +29,15 @@ export function ProductCard({ product }: { product: Product }) {
           {product.featured ? <Badge tone="red">Featured</Badge> : null}
           {product.popular ? <Badge>Popular</Badge> : null}
         </div>
-        <div className="aspect-[4/3]">
-          <HealthcareVisual title={product.name} subtitle={product.category} variant="product" className="h-full min-h-0 rounded-none border-0 shadow-none" />
-        </div>
+        {product.image ? (
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <Image src={product.image} alt={product.name} fill className="object-cover" />
+          </div>
+        ) : (
+          <div className="aspect-[4/3]">
+            <HealthcareVisual title={product.name} subtitle={product.category} variant="product" className="h-full min-h-0 rounded-none border-0 shadow-none" />
+          </div>
+        )}
       </div>
       <div className="p-5">
         <p className="text-xs font-black uppercase tracking-wide text-medoxy-primary">{division?.name} / {product.category}</p>

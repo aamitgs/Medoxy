@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Download, PackageCheck, ShieldCheck } from "lucide-react";
@@ -33,7 +34,13 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     <>
       <section className="section-pad">
         <div className="container-grid grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
-          <HealthcareVisual title={product.name} subtitle={product.category} variant="product" className="min-h-[520px]" />
+          {product.image ? (
+            <div className="overflow-hidden rounded-[28px] bg-white shadow-soft">
+              <Image src={product.image} alt={product.name} width={900} height={520} className="h-full w-full object-cover" />
+            </div>
+          ) : (
+            <HealthcareVisual title={product.name} subtitle={product.category} variant="product" className="min-h-[520px]" />
+          )}
           <div>
             <nav className="mb-5 text-sm font-bold text-medoxy-muted">
               <Link href="/">Home</Link> / <Link href="/divisions">Division</Link> / <Link href={`/divisions/${division?.slug}`}>{division?.name}</Link> / {product.name}
