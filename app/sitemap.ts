@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { articles, divisions, products, site } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/about", "/divisions", "/trade-quality", "/research-development", "/certifications-compliance", "/careers", "/gallery", "/blog", "/faq", "/contact"];
+  const staticRoutes = ["", "/about", "/divisions", "/trade-quality", "/portfolio-development", "/certifications-compliance", "/careers", "/gallery", "/blog", "/faq", "/contact"];
   return [
     ...staticRoutes.map((route) => ({ url: `${site.url}${route}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: route === "" ? 1 : 0.7 })),
     ...divisions.map((division) => ({ url: `${site.url}/divisions/${division.slug}`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 })),

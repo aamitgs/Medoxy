@@ -4,7 +4,7 @@ import { Send } from "lucide-react";
 import { useState } from "react";
 import { divisions, products } from "@/data/site";
 
-const inquiryTypes = ["Product Inquiry", "Distributor Inquiry", "Healthcare Provider Inquiry", "Partnership Inquiry", "Career Inquiry"];
+const inquiryTypes = ["Product Documents Request", "Distributor Inquiry", "Healthcare Provider Inquiry", "Trade Partnership Inquiry", "Career Inquiry"];
 
 export function InquiryForm({ productName, divisionName }: { productName?: string; divisionName?: string }) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");

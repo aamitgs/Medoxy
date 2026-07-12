@@ -15,7 +15,7 @@ export default function ContactPage() {
     <section className="section-pad">
       <div className="container-grid grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
         <div>
-          <SectionHeader eyebrow="Contact Us" title="Send a product, distributor, provider, or partnership inquiry." />
+          <SectionHeader eyebrow="Contact Us" title="Request product documents, discuss distribution, or send a trade inquiry." />
           <div className="grid gap-4">
             <div className="card p-6">
               <MapPin className="mb-4 text-medoxy-primary" />

@@ -25,10 +25,10 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="inline-flex items-center gap-2 rounded-lg bg-medoxy-secondary px-6 py-4 font-black text-white shadow-soft" href="/contact">
-                Send Inquiry <ArrowRight size={18} />
+                Discuss Distribution Inquiry <ArrowRight size={18} />
               </Link>
               <Link className="inline-flex items-center gap-2 rounded-lg border border-medoxy-border bg-white px-6 py-4 font-black text-medoxy-text" href="/divisions">
-                Explore Products
+                Request Product List
               </Link>
             </div>
           </div>
@@ -97,6 +97,25 @@ export default function Home() {
       </section>
 
       <section className="section-pad">
+        <div className="container-grid">
+          <SectionHeader eyebrow="Partner Trust" title="Documentation-led trading support for serious healthcare conversations." text="Medoxy keeps trade discussions grounded in clear product information, vendor expectations, packaging details, and responsive coordination." />
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+            {[
+              "Vendor documentation review",
+              "Batch-level product information",
+              "Distributor-ready packaging details",
+              "Compliance-aware communication",
+              "Inquiry-based partner coordination",
+            ].map((item) => (
+              <div key={item} className="card p-5 text-sm font-black leading-6 text-medoxy-text">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-white/45">
         <div className="container-grid">
           <SectionHeader eyebrow="Featured Products" title="Inquiry-ready products for distributor and healthcare partner evaluation." />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

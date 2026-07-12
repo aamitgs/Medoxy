@@ -1,6 +1,6 @@
 "use client";
 
-import { Search } from "lucide-react";
+import { Search, SlidersHorizontal } from "lucide-react";
 import { useMemo, useState } from "react";
 import { products } from "@/data/site";
 import { ProductCard } from "./ProductCard";
@@ -36,7 +36,7 @@ export function ProductExplorer({ divisionSlug }: { divisionSlug?: string }) {
         </div>
       ) : null}
 
-      <div className="grid gap-4 card p-4 md:grid-cols-[1fr_auto_auto]">
+      <div className="grid gap-4 card p-4">
         <label className="relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-medoxy-muted" size={18} />
           <input
@@ -46,18 +46,33 @@ export function ProductExplorer({ divisionSlug }: { divisionSlug?: string }) {
             onChange={(event) => setQuery(event.target.value)}
           />
         </label>
-        <select className="h-12 rounded-lg border border-medoxy-border px-4 text-sm font-semibold outline-none" value={category} onChange={(event) => setCategory(event.target.value)}>
-          {categories.map((item) => <option key={item} value={item}>{item === "all" ? "All categories" : item}</option>)}
-        </select>
-        <select className="h-12 rounded-lg border border-medoxy-border px-4 text-sm font-semibold outline-none" value={sort} onChange={(event) => setSort(event.target.value)}>
-          <option value="latest">Latest</option>
-          <option value="az">A-Z</option>
-          <option value="popular">Popular</option>
-          <option value="featured">Featured</option>
-        </select>
+        <div className="flex flex-wrap gap-2">
+          {categories.map((item) => {
+            const active = category === item;
+            return (
+              <button
+                key={item}
+                type="button"
+                className={`rounded-lg border px-4 py-2 text-sm font-black transition ${active ? "border-medoxy-primary bg-medoxy-primary text-white shadow-soft" : "border-medoxy-border bg-white text-medoxy-text hover:border-medoxy-primary"}`}
+                onClick={() => setCategory(item)}
+              >
+                {item === "all" ? "All Categories" : item}
+              </button>
+            );
+          })}
+        </div>
+        <label className="flex items-center gap-3 rounded-lg border border-medoxy-border bg-white px-4">
+          <SlidersHorizontal size={18} className="text-medoxy-primary" />
+          <select className="h-12 flex-1 bg-transparent text-sm font-semibold outline-none" value={sort} onChange={(event) => setSort(event.target.value)}>
+            <option value="latest">Latest</option>
+            <option value="az">A-Z</option>
+            <option value="popular">Popular</option>
+            <option value="featured">Featured</option>
+          </select>
+        </label>
       </div>
 
-      <p className="text-sm font-bold text-medoxy-muted">{filtered.length} products available for inquiry</p>
+      <p className="text-sm font-bold text-medoxy-muted">{filtered.length} products available for trade inquiry</p>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {filtered.map((product) => <ProductCard key={product.slug} product={product} />)}
       </div>

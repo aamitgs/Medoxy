@@ -30,11 +30,11 @@ export function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Link className="rounded-lg border border-medoxy-border bg-white px-4 py-3 text-sm font-bold text-medoxy-text transition hover:border-medoxy-primary" href="/divisions">
-            Explore Products
+            Request Product List
           </Link>
           <Link className="inline-flex items-center gap-2 rounded-lg bg-medoxy-secondary px-4 py-3 text-sm font-bold text-white shadow-soft transition hover:bg-red-600" href="/contact">
             <Send size={16} />
-            Send Inquiry
+            Distribution Inquiry
           </Link>
         </div>
 
@@ -56,7 +56,7 @@ export function Header() {
               </Link>
             ))}
             <Link className="rounded-lg bg-medoxy-secondary px-4 py-3 text-center text-sm font-bold text-white" href="/contact" onClick={() => setOpen(false)}>
-              Send Inquiry
+              Distribution Inquiry
             </Link>
           </div>
         </div>

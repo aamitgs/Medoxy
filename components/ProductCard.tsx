@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FileText, Send } from "lucide-react";
+import { ClipboardList, FileText } from "lucide-react";
 import { divisions } from "@/data/site";
 import { Badge } from "./Badge";
 import { HealthcareVisual } from "./HealthcareVisual";
@@ -24,17 +24,17 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="overflow-hidden card transition hover:-translate-y-1 hover:shadow-soft">
-      <div className="bg-medoxy-background">
-        <div className="flex min-h-14 flex-wrap items-center gap-2 px-4 py-3">
+      <div className="relative bg-gradient-to-b from-white to-medoxy-background">
+        <div className="absolute left-4 top-4 z-10 flex flex-wrap items-center gap-2">
           {product.featured ? <Badge tone="red">Featured</Badge> : null}
           {product.popular ? <Badge>Popular</Badge> : null}
         </div>
         {product.image ? (
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <Image src={product.image} alt={product.name} fill className="object-cover" />
+          <div className="relative aspect-[4/3] overflow-hidden px-5 pt-14">
+            <Image src={product.image} alt={product.name} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-contain p-5 drop-shadow-[0_22px_28px_rgba(15,23,42,0.16)]" />
           </div>
         ) : (
-          <div className="aspect-[4/3]">
+          <div className="aspect-[4/3] pt-12">
             <HealthcareVisual title={product.name} subtitle={product.category} variant="product" className="h-full min-h-0 rounded-none border-0 shadow-none" />
           </div>
         )}
@@ -49,7 +49,7 @@ export function ProductCard({ product }: { product: Product }) {
             <FileText size={16} /> View Details
           </Link>
           <Link className="inline-flex items-center gap-2 rounded-lg border border-medoxy-border px-4 py-3 text-sm font-bold text-medoxy-text" href={`/contact?product=${product.slug}`}>
-            <Send size={16} /> Send Inquiry
+            <ClipboardList size={16} /> Ask for Documents
           </Link>
         </div>
       </div>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Medoxy portfolio planning, product selection, category research, and future healthcare trading initiatives.",
 };
 
-export default function ResearchDevelopmentPage() {
+export default function PortfolioDevelopmentPage() {
   const items = [
     [Lightbulb, "Portfolio Planning", "Product selection guided by therapeutic relevance, market need, and healthcare usability."],
     [FlaskConical, "Product Information", "Composition review, dosage form mapping, packaging review, and information readiness."],

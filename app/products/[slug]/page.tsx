@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Download, PackageCheck, ShieldCheck } from "lucide-react";
+import { Download, Info, PackageCheck, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/Badge";
 import { HealthcareVisual } from "@/components/HealthcareVisual";
 import { InquiryForm } from "@/components/InquiryForm";
@@ -62,6 +62,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 </div>
               ))}
             </div>
+            <div className="mt-5 flex items-start gap-3 rounded-2xl border border-medoxy-border bg-white p-5 text-sm font-semibold leading-6 text-medoxy-muted">
+              <Info className="mt-0.5 shrink-0 text-medoxy-primary" size={18} />
+              Product information is intended for qualified healthcare and trade inquiries. Use medicines only under qualified medical supervision.
+            </div>
           </div>
         </div>
       </section>
@@ -73,7 +77,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               {[
                 [ShieldCheck, "Key Features", "Quality-aware sourcing, practical dosage format, and distributor-ready packaging."],
                 [PackageCheck, "Benefits", "Supports healthcare provider evaluation, distributor review, and institutional procurement discussions."],
-                [Download, "Downloads", "Brochure and product information sheet can be requested through the inquiry form."],
+                [Download, "Documents", "Brochure, product information sheet, and trade documents can be requested through the inquiry form."],
               ].map(([Icon, title, text]) => (
                 <article key={String(title)} className="card p-6">
                   <Icon className="mb-4 text-medoxy-primary" />
@@ -84,7 +88,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             </div>
           </div>
           <div>
-            <SectionHeader eyebrow="Request Information" title="Product inquiry" />
+            <SectionHeader eyebrow="Request Information" title="Ask for product documents" />
             <InquiryForm productName={product.name} divisionName={division?.name} />
           </div>
         </div>
