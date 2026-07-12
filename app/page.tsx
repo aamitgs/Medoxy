@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Award, Factory, FlaskConical, Hospital, ShieldCheck, Truck } from "lucide-react";
+import { ArrowRight, Award, Handshake, Hospital, ShieldCheck, Truck } from "lucide-react";
 import { Badge } from "@/components/Badge";
 import { DivisionCard } from "@/components/DivisionCard";
 import { HealthcareVisual } from "@/components/HealthcareVisual";
@@ -13,12 +13,15 @@ export default function Home() {
       <section className="section-pad">
         <div className="container-grid grid items-center gap-12 lg:grid-cols-[1.02fr_.98fr]">
           <div>
-            <Badge tone="blue">Healthcare Excellence</Badge>
+            <Badge tone="blue">Pharmaceutical Trading</Badge>
             <h1 className="mt-5 text-5xl font-black leading-[1.03] text-medoxy-text md:text-7xl">
               Medoxy Healthcare Pvt Ltd
             </h1>
+            <p className="mt-4 max-w-xl text-sm uppercase tracking-[0.4em] text-medoxy-secondary/80">
+              Trader-focused sourcing, product documentation, and healthcare distribution support.
+            </p>
             <p className="mt-6 max-w-2xl text-xl leading-9 text-medoxy-muted">
-              Premium gastroenterology product support, quality-led manufacturing partnerships, and responsive healthcare inquiry support for providers, distributors, and institutions.
+              Medoxy Healthcare Pvt Ltd is a pharmaceutical trading company focused on gastroenterology products, reliable sourcing, quality documentation, and responsive inquiry support for providers, distributors, and institutions.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="inline-flex items-center gap-2 rounded-lg bg-medoxy-secondary px-6 py-4 font-black text-white shadow-soft" href="/contact">
@@ -29,11 +32,11 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="relative min-h-[520px] overflow-hidden rounded-lg border border-medoxy-border bg-white shadow-soft">
-            <HealthcareVisual title="Modern healthcare product intelligence" subtitle="Medoxy Healthcare" variant="hero" className="min-h-[520px] rounded-none border-0 shadow-none" />
-            <div className="absolute inset-x-6 bottom-6 grid gap-3 rounded-lg bg-white/85 p-5 backdrop-blur md:grid-cols-2">
+          <div className="relative min-h-[520px] overflow-hidden rounded-[2rem] bg-white shadow-[0_40px_80px_rgba(46,102,226,0.14)]">
+            <HealthcareVisual title="Modern healthcare product intelligence" subtitle="Medoxy Healthcare" variant="hero" className="min-h-[520px] rounded-[2rem] border-0 shadow-none" />
+            <div className="absolute inset-x-6 bottom-6 grid gap-3 rounded-[1.5rem] bg-white/90 p-5 shadow-soft backdrop-blur md:grid-cols-2">
               {stats.map((stat) => (
-                <div key={stat.label} className="rounded-lg border border-medoxy-border bg-white p-4">
+                <div key={stat.label} className="rounded-[1.25rem] border border-medoxy-border bg-white p-4">
                   <p className="text-3xl font-black text-medoxy-primary">{stat.value}</p>
                   <p className="text-sm font-bold text-medoxy-muted">{stat.label}</p>
                 </div>
@@ -45,14 +48,14 @@ export default function Home() {
 
       <section className="section-pad bg-white/45">
         <div className="container-grid">
-          <SectionHeader eyebrow="About Medoxy" title="Credible healthcare solutions with a premium gastroenterology product experience." text="Medoxy brings healthcare expertise, reliable product organization, and inquiry-led support together for hospitals, clinics, pharmacies, distributors, and healthcare institutions." />
+          <SectionHeader eyebrow="About Medoxy" title="Credible pharmaceutical trading support with a focused gastroenterology portfolio." text="Medoxy connects healthcare providers, distributors, pharmacies, and institutions with organized gastroenterology product information, quality-aware sourcing, and responsive inquiry handling." />
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              ["Mission", "To make dependable healthcare products easier to evaluate, source, and support through transparent product information."],
-              ["Vision", "To become a trusted pharmaceutical brand recognized for quality, responsiveness, and partner confidence."],
-              ["Core Values", "Quality, compliance, professional ethics, healthcare access, and long-term business reliability."],
+              ["Mission", "To make dependable healthcare products easier to evaluate and source through transparent product information and trader-focused support."],
+              ["Vision", "To become a trusted pharmaceutical trading partner recognized for quality awareness, responsiveness, and partner confidence."],
+              ["Core Values", "Quality-aware sourcing, compliance, professional ethics, healthcare access, and long-term business reliability."],
             ].map(([title, text]) => (
-              <article key={title} className="rounded-lg border border-medoxy-border bg-white p-6 shadow-sm">
+              <article key={title} className="card p-6">
                 <h3 className="text-xl font-black text-medoxy-text">{title}</h3>
                 <p className="mt-3 leading-7 text-medoxy-muted">{text}</p>
               </article>
@@ -63,7 +66,7 @@ export default function Home() {
 
       <section className="section-pad">
         <div className="container-grid">
-          <SectionHeader eyebrow="Division" title="Digestive health products built for quick discovery and qualified inquiries." text="Filterable, no-commerce product architecture centered on clinical relevance and distributor conversations." />
+          <SectionHeader eyebrow="Division" title="Digestive health products organized for quick discovery and qualified trade inquiries." text="Filterable, no-commerce product architecture centered on clinical relevance, sourcing clarity, and distributor conversations." />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {divisions.map((division) => <DivisionCard key={division.slug} division={division} />)}
           </div>
@@ -72,17 +75,17 @@ export default function Home() {
 
       <section className="section-pad bg-white/45">
         <div className="container-grid grid items-center gap-10 lg:grid-cols-[.95fr_1.05fr]">
-          <HealthcareVisual title="Manufacturing and quality control" subtitle="Process Excellence" variant="manufacturing" className="min-h-[460px]" />
+          <HealthcareVisual title="Trade and quality coordination" subtitle="Process Excellence" variant="trade" className="min-h-[460px]" />
           <div>
-            <SectionHeader eyebrow="Why Choose Medoxy" title="Manufacturing excellence, quality controls, and dependable partner support." />
+            <SectionHeader eyebrow="Why Choose Medoxy" title="Trusted trading support, quality-aware sourcing, and dependable partner coordination." />
             <div className="grid gap-4 md:grid-cols-2">
               {[
-                [ShieldCheck, "Quality Standards", "WHO-GMP aligned quality mindset and batch-level accountability."],
-                [Factory, "Manufacturing Excellence", "Process-oriented production with verified documentation."],
+                [ShieldCheck, "Quality Standards", "WHO-GMP oriented vendor expectations, documentation checks, and batch-level consistency."],
+                [Handshake, "Trade Coordination", "Collaborative sourcing, documentation, and distribution support with trusted supply partners."],
                 [Award, "Industry Experience", "Healthcare-focused product organization and market awareness."],
                 [Truck, "Product Reliability", "Distributor-ready portfolio with practical packaging formats."],
               ].map(([Icon, title, text]) => (
-                <div key={String(title)} className="rounded-lg border border-medoxy-border bg-white p-5">
+                <div key={String(title)} className="card p-5">
                   <Icon className="mb-4 text-medoxy-primary" size={26} />
                   <h3 className="font-black text-medoxy-text">{String(title)}</h3>
                   <p className="mt-2 text-sm leading-6 text-medoxy-muted">{String(text)}</p>
@@ -95,22 +98,10 @@ export default function Home() {
 
       <section className="section-pad">
         <div className="container-grid">
-          <SectionHeader eyebrow="Featured Products" title="Inquiry-ready products across priority healthcare categories." />
+          <SectionHeader eyebrow="Featured Products" title="Inquiry-ready products for distributor and healthcare partner evaluation." />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {products.filter((product) => product.featured).slice(0, 4).map((product) => <ProductCard key={product.slug} product={product} />)}
           </div>
-        </div>
-      </section>
-
-      <section className="section-pad bg-white/45">
-        <div className="container-grid grid gap-10 lg:grid-cols-2">
-          <div>
-            <SectionHeader eyebrow="Research & Development" title="Innovation and product development guided by clinical need." text="Medoxy’s product planning emphasizes relevant compositions, practical dosage forms, and clear information for healthcare decision makers." />
-            <Link className="inline-flex items-center gap-2 rounded-lg bg-medoxy-primary px-5 py-4 font-black text-white" href="/research-development">
-              Explore R&D <ArrowRight size={18} />
-            </Link>
-          </div>
-          <HealthcareVisual title="Research and development laboratory" subtitle="Innovation Pipeline" variant="lab" className="min-h-[360px]" />
         </div>
       </section>
 
@@ -119,7 +110,7 @@ export default function Home() {
           <SectionHeader eyebrow="Industries Served" title="Built for healthcare providers, distributors, and institutions." />
           <div className="grid gap-4 md:grid-cols-5">
             {["Hospitals", "Clinics", "Pharmacies", "Healthcare Institutions", "Distributors"].map((item) => (
-              <div key={item} className="rounded-lg border border-medoxy-border bg-white p-5 text-center font-black text-medoxy-text">
+              <div key={item} className="card p-5 text-center font-black text-medoxy-text">
                 <Hospital className="mx-auto mb-3 text-medoxy-primary" />
                 {item}
               </div>
@@ -133,7 +124,7 @@ export default function Home() {
           <SectionHeader eyebrow="Testimonials" title="Partner confidence built around clarity and responsiveness." />
           <div className="grid gap-6 md:grid-cols-2">
             {testimonials.map((item) => (
-              <blockquote key={item.name} className="rounded-lg border border-medoxy-border bg-white p-7 shadow-sm">
+              <blockquote key={item.name} className="card p-7">
                 <p className="text-xl font-bold leading-8 text-medoxy-text">“{item.quote}”</p>
                 <footer className="mt-5 text-sm font-bold text-medoxy-muted">{item.name} · {item.role}</footer>
               </blockquote>
@@ -144,10 +135,10 @@ export default function Home() {
 
       <section className="section-pad">
         <div className="container-grid">
-          <SectionHeader eyebrow="Latest Articles" title="Healthcare insights, product updates, and quality perspectives." />
+          <SectionHeader eyebrow="Latest Articles" title="Healthcare trading insights, product updates, and documentation perspectives." />
           <div className="grid gap-6 md:grid-cols-3">
             {articles.map((article) => (
-              <Link key={article.slug} href={`/blog/${article.slug}`} className="rounded-lg border border-medoxy-border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+              <Link key={article.slug} href={`/blog/${article.slug}`} className="card p-6 transition hover:-translate-y-1 hover:shadow-soft">
                 <Badge tone="neutral">{article.category}</Badge>
                 <h3 className="mt-4 text-xl font-black text-medoxy-text">{article.title}</h3>
                 <p className="mt-3 leading-7 text-medoxy-muted">{article.excerpt}</p>
@@ -161,8 +152,8 @@ export default function Home() {
         <div className="container-grid rounded-lg bg-medoxy-primary p-8 text-white shadow-soft md:p-12">
           <div className="grid items-center gap-6 md:grid-cols-[1fr_auto]">
             <div>
-              <p className="text-sm font-black uppercase tracking-wide text-white/70">Product · Distributor · Partnership Inquiry</p>
-              <h2 className="mt-3 text-3xl font-black md:text-5xl">Ready to discuss a healthcare opportunity?</h2>
+              <p className="text-sm font-black uppercase tracking-wide text-white/70">Product · Distributor · Trade Inquiry</p>
+              <h2 className="mt-3 text-3xl font-black md:text-5xl">Ready to discuss a pharmaceutical trading opportunity?</h2>
             </div>
             <Link className="rounded-lg bg-medoxy-secondary px-6 py-4 text-center font-black text-white" href="/contact">
               Send Inquiry

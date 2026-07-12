@@ -10,14 +10,14 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Medoxy Healthcare Pvt Ltd | Premium Healthcare & Pharmaceutical Solutions",
+    default: "Medoxy Healthcare Pvt Ltd | Pharmaceutical Trading Company",
     template: "%s | Medoxy Healthcare Pvt Ltd",
   },
   description:
-    "Medoxy Healthcare Pvt Ltd is an inquiry-focused healthcare and pharmaceutical company showcasing gastroenterology products, manufacturing quality, compliance, and partnership opportunities.",
+    "Medoxy Healthcare Pvt Ltd is an inquiry-focused pharmaceutical trading company showcasing gastroenterology products, trade quality, product documentation, and distributor partnership opportunities.",
   openGraph: {
     title: "Medoxy Healthcare Pvt Ltd",
-    description: "Premium healthcare and pharmaceutical product division experience.",
+    description: "Pharmaceutical trading company with a focused gastroenterology product portfolio.",
     url: site.url,
     siteName: site.name,
     type: "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Medoxy Healthcare Pvt Ltd",
-    description: "Inquiry-led healthcare product catalog and pharmaceutical brand presence.",
+    description: "Inquiry-led pharmaceutical trading catalog and healthcare product portfolio.",
   },
   alternates: {
     canonical: site.url,

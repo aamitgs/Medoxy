@@ -47,3 +47,16 @@ body {
 .section-pad {
   padding-block: clamp(64px, 9vw, 120px);
 }
+@layer components {
+  .card {
+    @apply rounded-2xl border border-medoxy-border/80 bg-white shadow-soft ring-1 ring-medoxy-primary/10;
+  }
+
+  .card-panel {
+    @apply rounded-2xl border border-medoxy-border/70 bg-white/90 shadow-soft backdrop-blur ring-1 ring-medoxy-primary/10;
+  }
+
+  .card-minimal {
+    @apply rounded-2xl border border-medoxy-border/70 bg-white;
+  }
+}

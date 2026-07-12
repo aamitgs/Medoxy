@@ -26,7 +26,7 @@ export const socialLinks = [
 export const nav = [
   { label: "About", href: "/about" },
   { label: "Division", href: "/divisions" },
-  { label: "Quality", href: "/manufacturing-quality" },
+  { label: "Quality", href: "/trade-quality" },
   { label: "Compliance", href: "/certifications-compliance" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -40,27 +40,14 @@ export const divisions = [
   {
     slug: "gastroenterology",
     name: "Gastroenterology",
-    description: "Digestive health formulations designed for clinical confidence and adherence.",
-    benefits: ["GI symptom support", "Multiple dosage formats", "High patient relevance"],
+    description: "Digestive health products organized for clinical confidence, sourcing clarity, and trade inquiries.",
+    benefits: ["GI symptom support", "Multiple dosage formats", "Distributor-ready information"],
   },
 ] as const;
 
 export type DivisionSlug = (typeof divisions)[number]["slug"];
 
 export const products = [
-  {
-    slug: "pantoxy-dsr",
-    name: "Pantoxy DSR",
-    division: "gastroenterology",
-    category: "Acidity & GERD",
-    composition: "Pantoprazole 40 mg + Domperidone 30 mg SR",
-    dosageForm: "Capsule",
-    packaging: "10 x 10 Alu-Alu",
-    description: "Gastrointestinal support for acid-related disorders and reflux care.",
-    image: "/products/pantoxy-dsr.jpg",
-    featured: true,
-    popular: true,
-  },
   {
     slug: "benzispa-sr",
     name: "Benzispa SR",
@@ -248,7 +235,7 @@ export const products = [
 export const stats = [
   { label: "Therapeutic Division", value: "1" },
   { label: "Product Formats", value: "4+" },
-  { label: "Quality Checkpoints", value: "24+" },
+  { label: "Trade Checkpoints", value: "24+" },
   { label: "Inquiry Focus", value: "100%" },
 ];
 
@@ -257,7 +244,7 @@ export const articles = [
     slug: "building-trust-in-pharmaceutical-distribution",
     title: "Building Trust in Pharmaceutical Distribution",
     category: "Healthcare Trends",
-    excerpt: "Why consistent documentation, product reliability, and responsive support matter for healthcare partners.",
+    excerpt: "Why consistent documentation, product reliability, and responsive trade support matter for healthcare partners.",
     date: "2026-05-18",
     tags: ["distribution", "quality", "healthcare"],
   },
@@ -265,15 +252,15 @@ export const articles = [
     slug: "quality-systems-for-modern-healthcare-brands",
     title: "Quality Systems for Modern Healthcare Brands",
     category: "Pharmaceutical News",
-    excerpt: "A practical view of manufacturing controls, vendor qualification, and batch-level accountability.",
+    excerpt: "A practical view of trade quality controls, vendor qualification, and batch-level documentation.",
     date: "2026-04-26",
-    tags: ["quality", "manufacturing", "compliance"],
+    tags: ["quality", "trading", "compliance"],
   },
   {
     slug: "gastroenterology-products-for-clinical-discovery",
     title: "Gastroenterology Products for Clinical Discovery",
     category: "Product Updates",
-    excerpt: "Organized therapy areas make it easier for providers and distributors to evaluate relevant products.",
+    excerpt: "Organized therapy areas make it easier for providers and distributors to evaluate relevant trade products.",
     date: "2026-03-12",
     tags: ["products", "clinical", "portfolio"],
   },
@@ -281,12 +268,12 @@ export const articles = [
 
 export const testimonials = [
   {
-    quote: "Medoxy’s portfolio presentation and response quality make distributor evaluation faster and clearer.",
+    quote: "Medoxy’s portfolio presentation and trade response quality make distributor evaluation faster and clearer.",
     name: "Regional Healthcare Distributor",
     role: "North India",
   },
   {
-    quote: "Their gastroenterology product organization helps our team identify relevant therapies quickly.",
+    quote: "Their gastroenterology product organization helps our team identify relevant trade opportunities quickly.",
     name: "Clinical Procurement Lead",
     role: "Multi-speciality care network",
   },

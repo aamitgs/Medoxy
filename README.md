@@ -1,6 +1,6 @@
 Medoxy Healthcare Pvt Ltd
 
-Premium, inquiry-led healthcare and pharmaceutical website built with Next.js 15, React, TypeScript, and Tailwind CSS.
+Premium, inquiry-led healthcare and pharmaceutical trading website built with Next.js 15, React, TypeScript, and Tailwind CSS.
 
 ## Features
 
@@ -8,7 +8,7 @@ Premium, inquiry-led healthcare and pharmaceutical website built with Next.js 15
 - Division-led product catalog with search, category filters, sorting, and sticky navigation
 - Dynamic division and product detail pages
 - Inquiry-first forms with client validation, server validation, basic rate limiting, and reCAPTCHA hook
-- About, Manufacturing & Quality, Research & Development, Compliance, Careers, Gallery, FAQ, Blog, and Contact pages
+- About, Trade & Quality, Portfolio Development, Compliance, Careers, Gallery, FAQ, Blog, and Contact pages
 - SEO metadata, Open Graph, schema markup, sitemap, robots, canonical URL setup, and security headers
 - No ecommerce: no pricing, cart, checkout, online payments, or accounts
 

@@ -23,7 +23,7 @@ export function ProductCard({ product }: { product: Product }) {
   const division = divisions.find((item) => item.slug === product.division);
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-medoxy-border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+    <article className="overflow-hidden card transition hover:-translate-y-1 hover:shadow-soft">
       <div className="bg-medoxy-background">
         <div className="flex min-h-14 flex-wrap items-center gap-2 px-4 py-3">
           {product.featured ? <Badge tone="red">Featured</Badge> : null}

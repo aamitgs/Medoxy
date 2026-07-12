@@ -30,7 +30,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         <Badge>{article.category}</Badge>
         <h1 className="mt-5 text-5xl font-black leading-tight text-medoxy-text md:text-7xl">{article.title}</h1>
         <p className="mt-5 text-lg font-bold text-medoxy-muted">{new Date(article.date).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })}</p>
-        <article className="prose prose-lg mt-10 max-w-none rounded-lg border border-medoxy-border bg-white p-8 text-medoxy-muted shadow-sm">
+        <article className="prose prose-lg mt-10 max-w-none card p-8 text-medoxy-muted">
           <p>{article.excerpt}</p>
           <h2>Why it matters</h2>
           <p>Healthcare partners evaluate pharmaceutical brands through product clarity, quality documentation, reliable response times, and professional communication. Medoxy’s digital product experience is designed around those decisions.</p>
@@ -43,7 +43,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
           <SectionHeader eyebrow="Related Articles" title="More healthcare insights" />
           <div className="grid gap-5 md:grid-cols-2">
             {related.map((item) => (
-              <Link key={item.slug} href={`/blog/${item.slug}`} className="rounded-lg border border-medoxy-border bg-white p-5">
+              <Link key={item.slug} href={`/blog/${item.slug}`} className="card p-5">
                 <h2 className="font-black text-medoxy-text">{item.title}</h2>
                 <p className="mt-2 text-sm leading-6 text-medoxy-muted">{item.excerpt}</p>
               </Link>

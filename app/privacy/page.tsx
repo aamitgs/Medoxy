@@ -22,7 +22,7 @@ export default function PrivacyPage() {
         <SectionHeader eyebrow="Privacy Policy" title="How Medoxy handles inquiry information." text="This policy explains how information submitted through the website is used and protected." />
         <div className="grid gap-5">
           {sections.map(([title, text]) => (
-            <article key={title} className="rounded-lg border border-medoxy-border bg-white p-6">
+            <article key={title} className="card p-6">
               <h2 className="text-xl font-black text-medoxy-text">{title}</h2>
               <p className="mt-3 leading-7 text-medoxy-muted">{text}</p>
             </article>

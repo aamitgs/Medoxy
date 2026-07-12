@@ -28,7 +28,7 @@ export function InquiryForm({ productName, divisionName }: { productName?: strin
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-4 rounded-lg border border-medoxy-border bg-white p-6 shadow-soft">
+    <form onSubmit={onSubmit} className="grid gap-4 card p-6">
       <div className="grid gap-4 md:grid-cols-2">
         <input required name="fullName" placeholder="Full Name" className="h-12 rounded-lg border border-medoxy-border px-4 outline-none focus:border-medoxy-primary" />
         <input required name="organization" placeholder="Organization" className="h-12 rounded-lg border border-medoxy-border px-4 outline-none focus:border-medoxy-primary" />

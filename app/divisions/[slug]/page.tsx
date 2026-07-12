@@ -27,8 +27,8 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
   const count = products.filter((product) => product.division === division.slug).length;
   const statCards = [
     [Layers, "Total Products", `${count}+`],
-    [Award, "Years Experience", "10+"],
-    [BadgeCheck, "Quality Certifications", "WHO-GMP"],
+    [Award, "Trade Experience", "10+"],
+    [BadgeCheck, "Vendor Standards", "WHO-GMP"],
     [Globe2, "Distribution Reach", "India"],
   ];
 
@@ -44,15 +44,15 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
             <h1 className="mt-5 text-5xl font-black leading-tight text-medoxy-text md:text-7xl">{division.name}</h1>
             <p className="mt-6 text-xl leading-9 text-medoxy-muted">{division.description}</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              {["WHO-GMP Standards", "Gastroenterology", "Quality Assured", "Digestive Health Range"].map((item) => <Badge key={item} tone="neutral">{item}</Badge>)}
+              {["WHO-GMP Oriented Vendors", "Gastroenterology", "Quality-Aware Trading", "Digestive Health Range"].map((item) => <Badge key={item} tone="neutral">{item}</Badge>)}
             </div>
             <ul className="mt-8 grid gap-3 text-medoxy-muted">
-              {division.benefits.map((benefit) => <li key={benefit} className="rounded-lg border border-medoxy-border bg-white px-4 py-3 font-semibold">{benefit}</li>)}
+              {division.benefits.map((benefit) => <li key={benefit} className="card-minimal px-4 py-3 font-semibold">{benefit}</li>)}
             </ul>
           </div>
-          <div className="grid gap-4 rounded-lg border border-medoxy-border bg-white/75 p-5 shadow-soft backdrop-blur md:grid-cols-2">
+          <div className="grid gap-4 card-panel p-5 md:grid-cols-2">
             {statCards.map(([Icon, label, value]) => (
-              <div key={String(label)} className="rounded-lg border border-medoxy-border bg-white p-5">
+              <div key={String(label)} className="card p-5">
                 <Icon className="mb-5 text-medoxy-primary" size={30} />
                 <p className="text-3xl font-black text-medoxy-text">{String(value)}</p>
                 <p className="mt-2 text-sm font-bold text-medoxy-muted">{String(label)}</p>
@@ -63,7 +63,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
       </section>
       <section className="section-pad bg-white/45">
         <div className="container-grid">
-          <SectionHeader eyebrow="Products" title={`${division.name} product range`} text="Search and filter gastroenterology products, then request detailed product information from Medoxy." />
+          <SectionHeader eyebrow="Products" title={`${division.name} product range`} text="Search and filter gastroenterology products, then request trade-ready product information from Medoxy." />
           <ProductExplorer divisionSlug={division.slug} />
         </div>
       </section>

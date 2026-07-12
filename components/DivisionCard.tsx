@@ -8,7 +8,7 @@ export function DivisionCard({ division }: { division: { slug: DivisionSlug; nam
   const count = products.filter((product) => product.division === division.slug).length;
 
   return (
-    <article className="group rounded-lg border border-medoxy-border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+    <article className="group card p-6 transition hover:-translate-y-1 hover:shadow-soft">
       <div className="mb-6 flex items-start justify-between gap-4">
         <span className="grid h-14 w-14 place-items-center rounded-lg bg-medoxy-primary/10 text-medoxy-primary">
           <Icon size={27} />

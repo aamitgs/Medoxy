@@ -6,7 +6,7 @@ import { articles } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Healthcare trends, pharmaceutical news, product updates, and company news from Medoxy Healthcare.",
+  description: "Healthcare trading insights, pharmaceutical product updates, distribution topics, and quality documentation perspectives from Medoxy Healthcare.",
 };
 
 export default function BlogPage() {
@@ -14,13 +14,13 @@ export default function BlogPage() {
   return (
     <section className="section-pad">
       <div className="container-grid">
-        <SectionHeader eyebrow="Blog" title="Healthcare insights and pharmaceutical updates." text="Browse Medoxy articles by category, tag, and related healthcare business topics." />
+        <SectionHeader eyebrow="Blog" title="Healthcare trading insights and pharmaceutical product updates." text="Browse Medoxy articles by category, tag, distribution topic, and related healthcare business themes." />
         <div className="mb-8 flex flex-wrap gap-3">
           {categories.map((category) => <Badge key={category} tone="neutral">{category}</Badge>)}
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {articles.map((article) => (
-            <Link key={article.slug} href={`/blog/${article.slug}`} className="rounded-lg border border-medoxy-border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+            <Link key={article.slug} href={`/blog/${article.slug}`} className="card p-6 transition hover:-translate-y-1 hover:shadow-soft">
               <Badge>{article.category}</Badge>
               <h2 className="mt-4 text-2xl font-black text-medoxy-text">{article.title}</h2>
               <p className="mt-3 leading-7 text-medoxy-muted">{article.excerpt}</p>

@@ -9,7 +9,7 @@ export function FAQAccordion({ items }: { items: { question: string; answer: str
   return (
     <div className="grid gap-3">
       {items.map((item, index) => (
-        <div key={item.question} className="rounded-lg border border-medoxy-border bg-white">
+        <div key={item.question} className="card-minimal">
           <button className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-black" onClick={() => setOpen(open === index ? -1 : index)} type="button">
             {item.question}
             <ChevronDown className={open === index ? "rotate-180 transition" : "transition"} size={18} />

@@ -56,7 +56,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 ["Storage", "Store in a cool, dry place"],
                 ["Availability", "Inquiry based"],
               ].map(([label, value]) => (
-                <div key={label} className="rounded-lg border border-medoxy-border bg-white p-5">
+                <div key={label} className="card p-5">
                   <p className="text-xs font-black uppercase tracking-wide text-medoxy-muted">{label}</p>
                   <p className="mt-2 font-black text-medoxy-text">{value}</p>
                 </div>
@@ -68,14 +68,14 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       <section className="section-pad bg-white/45">
         <div className="container-grid grid gap-10 lg:grid-cols-[1fr_.9fr]">
           <div>
-            <SectionHeader eyebrow="Product Overview" title="Clinical information for qualified healthcare inquiries." />
+            <SectionHeader eyebrow="Product Overview" title="Trade-ready information for qualified healthcare inquiries." />
             <div className="grid gap-4 md:grid-cols-2">
               {[
-                [ShieldCheck, "Key Features", "Quality-assured composition, practical dosage format, and distributor-ready packaging."],
-                [PackageCheck, "Benefits", "Supports healthcare provider evaluation and institutional procurement discussions."],
+                [ShieldCheck, "Key Features", "Quality-aware sourcing, practical dosage format, and distributor-ready packaging."],
+                [PackageCheck, "Benefits", "Supports healthcare provider evaluation, distributor review, and institutional procurement discussions."],
                 [Download, "Downloads", "Brochure and product information sheet can be requested through the inquiry form."],
               ].map(([Icon, title, text]) => (
-                <article key={String(title)} className="rounded-lg border border-medoxy-border bg-white p-6">
+                <article key={String(title)} className="card p-6">
                   <Icon className="mb-4 text-medoxy-primary" />
                   <h3 className="font-black text-medoxy-text">{String(title)}</h3>
                   <p className="mt-2 leading-7 text-medoxy-muted">{String(text)}</p>

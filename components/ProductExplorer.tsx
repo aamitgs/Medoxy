@@ -36,7 +36,7 @@ export function ProductExplorer({ divisionSlug }: { divisionSlug?: string }) {
         </div>
       ) : null}
 
-      <div className="grid gap-4 rounded-lg border border-medoxy-border bg-white p-4 md:grid-cols-[1fr_auto_auto]">
+      <div className="grid gap-4 card p-4 md:grid-cols-[1fr_auto_auto]">
         <label className="relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-medoxy-muted" size={18} />
           <input

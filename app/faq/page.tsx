@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 const faqs = [
   { question: "Does Medoxy sell products online?", answer: "No. The website is strictly inquiry-based and does not include ecommerce, cart, checkout, online payments, product pricing, or customer accounts." },
-  { question: "Can distributors request product information?", answer: "Yes. Distributors can send product, division, and partnership inquiries through the contact and product detail forms." },
+  { question: "Can distributors request product information?", answer: "Yes. Distributors can send product, division, sourcing, and trade partnership inquiries through the contact and product detail forms." },
   { question: "Are brochures available?", answer: "Product brochures and information sheets can be requested by qualified healthcare or distribution partners." },
-  { question: "Which healthcare categories are covered?", answer: "Medoxy covers general medicine, cardio diabetic, gastroenterology, neurology, gynecology, orthopaedics, pediatrics, dermatology, respiratory care, and critical care." },
+  { question: "Which healthcare categories are covered?", answer: "Medoxy currently focuses on gastroenterology products for healthcare provider, distributor, pharmacy, and institutional inquiries." },
   { question: "How are inquiries handled?", answer: "Form submissions are validated on the client and server. In production, they can be connected to email notifications, admin alerts, reCAPTCHA, and rate limiting." },
 ];
 

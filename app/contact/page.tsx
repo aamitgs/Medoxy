@@ -17,26 +17,26 @@ export default function ContactPage() {
         <div>
           <SectionHeader eyebrow="Contact Us" title="Send a product, distributor, provider, or partnership inquiry." />
           <div className="grid gap-4">
-            <div className="rounded-lg border border-medoxy-border bg-white p-6">
+            <div className="card p-6">
               <MapPin className="mb-4 text-medoxy-primary" />
               <h2 className="font-black text-medoxy-text">{site.name}</h2>
               <p className="mt-3 leading-7 text-medoxy-muted">{site.address.join(", ")}</p>
             </div>
-            <div className="rounded-lg border border-medoxy-border bg-white p-6">
+            <div className="card p-6">
               <Mail className="mb-4 text-medoxy-primary" />
               <p className="font-black text-medoxy-text">{site.email}</p>
             </div>
-            <div className="rounded-lg border border-medoxy-border bg-white p-6">
+            <div className="card p-6">
               <Phone className="mb-4 text-medoxy-primary" />
               <p className="font-black text-medoxy-text">{site.phone}</p>
             </div>
-            <div className="rounded-lg border border-medoxy-border bg-white p-6">
+            <div className="card p-6">
               <h2 className="font-black text-medoxy-text">Social Media</h2>
               <div className="mt-4">
                 <SocialLinks tone="dark" />
               </div>
             </div>
-            <div className="overflow-hidden rounded-lg border border-medoxy-border bg-white">
+            <div className="overflow-hidden card-minimal">
               <iframe
                 title="Medoxy Healthcare Gurgaon map"
                 src="https://www.google.com/maps?q=Bhondsi%20Gurgaon%20Haryana%20122102%20India&output=embed"
