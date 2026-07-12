@@ -2,6 +2,8 @@ export function MedoxyLogo({ className = "" }: { className?: string }) {
   return (
     <svg
       className={className}
+      width="360"
+      height="250"
       viewBox="0 0 360 250"
       role="img"
       aria-label="Medoxy"

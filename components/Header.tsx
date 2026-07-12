@@ -11,7 +11,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-medoxy-border/80 bg-[#F0EADF]/88 backdrop-blur-xl">
-      <div className="container-grid flex h-20 items-center justify-between gap-4">
+      <div className="header-grid flex h-20 items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3" aria-label="Medoxy home">
           <MedoxyLogo className="h-14 w-24 shrink-0" />
           <span>
@@ -29,10 +29,10 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link className="rounded-lg border border-medoxy-border bg-white px-4 py-3 text-sm font-bold text-medoxy-text transition hover:border-medoxy-primary" href="/divisions">
+          <Link className="whitespace-nowrap rounded-lg border border-medoxy-border bg-white px-4 py-3 text-sm font-bold text-medoxy-text transition hover:border-medoxy-primary" href="/divisions">
             Request Product List
           </Link>
-          <Link className="inline-flex items-center gap-2 rounded-lg bg-medoxy-secondary px-4 py-3 text-sm font-bold text-white shadow-soft transition hover:bg-red-600" href="/contact">
+          <Link className="inline-flex items-center gap-2 whitespace-nowrap rounded-lg bg-medoxy-secondary px-4 py-3 text-sm font-bold text-white shadow-soft transition hover:bg-red-600" href="/contact">
             <Send size={16} />
             Distribution Inquiry
           </Link>

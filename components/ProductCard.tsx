@@ -30,8 +30,8 @@ export function ProductCard({ product }: { product: Product }) {
           {product.popular ? <Badge>Popular</Badge> : null}
         </div>
         {product.image ? (
-          <div className="relative aspect-[4/3] overflow-hidden px-5 pt-14">
-            <Image src={product.image} alt={product.name} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-contain p-5 drop-shadow-[0_22px_28px_rgba(15,23,42,0.16)]" />
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <Image src={product.image} alt={product.name} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-cover" />
           </div>
         ) : (
           <div className="aspect-[4/3] pt-12">
