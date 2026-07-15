@@ -8,7 +8,10 @@ const config: Config = {
         medoxy: {
           primary: "#2E66E2",
           secondary: "#E53935",
-          background: "#F0EADF",
+          background: "#FFFFFF",
+          surface: "#F6F8FA",
+          clinical: "#F4F8FF",
+          health: "#F3FBF7",
           text: "#1A1A1A",
           muted: "#555555",
           border: "#D8D0C5",

@@ -18,7 +18,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <section className="section-pad">
+    <section className="section-pad section-clinical">
       <div className="container-grid">
         <SectionHeader eyebrow="About Us" title="A modern healthcare brand built for trust, clarity, and qualified business inquiries." />
         <div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr]">

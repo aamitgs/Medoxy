@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function CareersPage() {
   return (
-    <section className="section-pad">
+    <section className="section-pad section-clinical">
       <div className="container-grid grid gap-10 lg:grid-cols-[1fr_.9fr]">
         <div>
           <SectionHeader eyebrow="Careers" title="Build a healthcare career with a trading-focused pharmaceutical company." text="Medoxy welcomes applications from sales, trade operations, product coordination, quality documentation, and healthcare business professionals." />

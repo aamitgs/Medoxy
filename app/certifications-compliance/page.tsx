@@ -16,7 +16,7 @@ export default function CertificationsPage() {
   ];
 
   return (
-    <section className="section-pad">
+    <section className="section-pad section-surface">
       <div className="container-grid">
         <SectionHeader eyebrow="Certifications & Compliance" title="A compliance-aware trading model for healthcare confidence." text="Medoxy emphasizes transparent product documentation, regulatory awareness, responsible communication, and partner confidence across its gastroenterology portfolio." />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

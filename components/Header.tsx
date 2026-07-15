@@ -10,7 +10,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-medoxy-border/80 bg-[#F0EADF]/88 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-medoxy-border/80 bg-white/88 backdrop-blur-xl">
       <div className="header-grid flex h-20 items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3" aria-label="Medoxy home">
           <MedoxyLogo className="h-14 w-24 shrink-0" />
@@ -48,7 +48,7 @@ export function Header() {
         </button>
       </div>
       {open && (
-        <div className="border-t border-medoxy-border bg-[#F0EADF] lg:hidden">
+        <div className="border-t border-medoxy-border bg-white lg:hidden">
           <div className="container-grid grid gap-3 py-5">
             {nav.map((item) => (
               <Link key={item.href} className="rounded-lg bg-white px-4 py-3 text-sm font-bold text-medoxy-text" href={item.href} onClick={() => setOpen(false)}>

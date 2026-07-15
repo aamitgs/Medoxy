@@ -34,7 +34,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
 
   return (
     <>
-      <section className="section-pad">
+      <section className="section-pad section-health">
         <div className="container-grid grid gap-10 lg:grid-cols-[1fr_.82fr]">
           <div>
             <nav className="mb-5 text-sm font-bold text-medoxy-muted">
@@ -61,7 +61,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
           </div>
         </div>
       </section>
-      <section className="section-pad bg-white/45">
+      <section className="section-pad section-surface">
         <div className="container-grid">
           <SectionHeader eyebrow="Products" title={`${division.name} product range`} text="Search and filter gastroenterology products, then request trade-ready product information from Medoxy." />
           <ProductExplorer divisionSlug={division.slug} />

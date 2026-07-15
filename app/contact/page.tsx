@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="section-pad">
+    <section className="section-pad section-clinical">
       <div className="container-grid grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
         <div>
           <SectionHeader eyebrow="Contact Us" title="Request product documents, discuss distribution, or send a trade inquiry." />

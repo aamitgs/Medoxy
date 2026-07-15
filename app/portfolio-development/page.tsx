@@ -17,7 +17,7 @@ export default function PortfolioDevelopmentPage() {
   ];
 
   return (
-    <section className="section-pad">
+    <section className="section-pad section-health">
       <div className="container-grid">
         <SectionHeader eyebrow="Portfolio Development" title="Healthcare product planning for a focused pharmaceutical trading portfolio." />
         <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr]">

@@ -17,7 +17,7 @@ export default function TermsPage() {
   ];
 
   return (
-    <section className="section-pad">
+    <section className="section-pad section-surface">
       <div className="container-grid">
         <SectionHeader eyebrow="Terms & Disclaimer" title="Terms of Use" text={`Please review the terms for using ${site.name}'s website and inquiry forms.`} />
         <div className="grid gap-5">

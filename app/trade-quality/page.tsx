@@ -17,7 +17,7 @@ export default function TradeQualityPage() {
   ];
 
   return (
-    <section className="section-pad">
+    <section className="section-pad section-surface">
       <div className="container-grid">
         <SectionHeader eyebrow="Trade & Quality" title="Pharmaceutical trade quality for dependable healthcare distribution." text="Medoxy focuses on sourcing coordination, vendor documentation, product traceability, and distribution-ready support for healthcare partners." />
         <div className="grid gap-8 lg:grid-cols-[1fr_.9fr]">

@@ -17,7 +17,7 @@ export default function PrivacyPage() {
   ];
 
   return (
-    <section className="section-pad">
+    <section className="section-pad section-surface">
       <div className="container-grid">
         <SectionHeader eyebrow="Privacy Policy" title="How Medoxy handles inquiry information." text="This policy explains how information submitted through the website is used and protected." />
         <div className="grid gap-5">

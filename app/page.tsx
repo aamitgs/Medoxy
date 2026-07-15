@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-pad bg-white/45">
+      <section className="section-pad section-clinical">
         <div className="container-grid">
           <SectionHeader eyebrow="About Medoxy" title="Credible pharmaceutical trading support with a focused gastroenterology portfolio." text="Medoxy connects healthcare providers, distributors, pharmacies, and institutions with organized gastroenterology product information, quality-aware sourcing, and responsive inquiry handling." />
           <div className="grid gap-6 md:grid-cols-3">
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad section-health">
         <div className="container-grid">
           <SectionHeader eyebrow="Division" title="Digestive health products organized for quick discovery and qualified trade inquiries." text="Filterable, no-commerce product architecture centered on clinical relevance, sourcing clarity, and distributor conversations." />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-pad bg-white/45">
+      <section className="section-pad section-surface">
         <div className="container-grid grid items-center gap-10 lg:grid-cols-[.95fr_1.05fr]">
           <HealthcareVisual title="Trade and quality coordination" subtitle="Process Excellence" variant="trade" className="min-h-[460px]" />
           <div>
@@ -96,7 +96,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad section-clinical">
         <div className="container-grid">
           <SectionHeader eyebrow="Partner Trust" title="Documentation-led trading support for serious healthcare conversations." text="Medoxy keeps trade discussions grounded in clear product information, vendor expectations, packaging details, and responsive coordination." />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
@@ -115,7 +115,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-pad bg-white/45">
+      <section className="section-pad section-health">
         <div className="container-grid">
           <SectionHeader eyebrow="Featured Products" title="Inquiry-ready products for distributor and healthcare partner evaluation." />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -124,7 +124,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad section-clinical">
         <div className="container-grid">
           <SectionHeader eyebrow="Industries Served" title="Built for healthcare providers, distributors, and institutions." />
           <div className="grid gap-4 md:grid-cols-5">
@@ -138,7 +138,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-pad bg-white/45">
+      <section className="section-pad section-surface">
         <div className="container-grid">
           <SectionHeader eyebrow="Testimonials" title="Partner confidence built around clarity and responsiveness." />
           <div className="grid gap-6 md:grid-cols-2">
@@ -152,7 +152,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad section-surface">
         <div className="container-grid">
           <SectionHeader eyebrow="Latest Articles" title="Healthcare trading insights, product updates, and documentation perspectives." />
           <div className="grid gap-6 md:grid-cols-3">

@@ -26,6 +26,7 @@ export const socialLinks = [
 export const nav = [
   { label: "About", href: "/about" },
   { label: "Division", href: "/divisions" },
+  { label: "Products", href: "/products" },
   { label: "Quality", href: "/trade-quality" },
   { label: "Portfolio", href: "/portfolio-development" },
   { label: "Compliance", href: "/certifications-compliance" },

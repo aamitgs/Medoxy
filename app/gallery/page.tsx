@@ -16,7 +16,7 @@ const images = [
 
 export default function GalleryPage() {
   return (
-    <section className="section-pad">
+    <section className="section-pad section-clinical">
       <div className="container-grid">
         <SectionHeader eyebrow="Gallery" title="A visual look at trade coordination, products, teams, and events." />
         <div className="grid gap-6 md:grid-cols-2">

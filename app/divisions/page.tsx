@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function DivisionsPage() {
   return (
     <>
-      <section className="section-pad">
+      <section className="section-pad section-health">
         <div className="container-grid">
           <SectionHeader eyebrow="Division" title="Digestive health product portfolio for clinical and distributor discovery." text="Browse Medoxy gastroenterology products, search categories, and request trade-ready product information without ecommerce or pricing." />
           <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

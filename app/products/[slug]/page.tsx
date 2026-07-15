@@ -32,7 +32,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
   return (
     <>
-      <section className="section-pad">
+      <section className="section-pad section-health">
         <div className="container-grid grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
           {product.image ? (
             <div className="overflow-hidden rounded-[28px] bg-white shadow-soft">
@@ -69,7 +69,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </section>
-      <section className="section-pad bg-white/45">
+      <section className="section-pad section-surface">
         <div className="container-grid grid gap-10 lg:grid-cols-[1fr_.9fr]">
           <div>
             <SectionHeader eyebrow="Product Overview" title="Trade-ready information for qualified healthcare inquiries." />
@@ -94,7 +94,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         </div>
       </section>
       {related.length ? (
-        <section className="section-pad">
+        <section className="section-pad section-health">
           <div className="container-grid">
             <SectionHeader eyebrow="Related Products" title={`More from ${division?.name}`} />
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

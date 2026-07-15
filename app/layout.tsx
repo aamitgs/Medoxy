@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     title: "Medoxy Healthcare Pvt Ltd",
     description: "Inquiry-led pharmaceutical trading catalog and healthcare product portfolio.",
   },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   alternates: {
     canonical: site.url,
   },

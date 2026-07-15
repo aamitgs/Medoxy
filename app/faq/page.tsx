@@ -17,7 +17,7 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <section className="section-pad">
+    <section className="section-pad section-surface">
       <div className="container-grid max-w-4xl">
         <SectionHeader eyebrow="FAQ" title="Product, distribution, and company questions." />
         <FAQAccordion items={faqs} />

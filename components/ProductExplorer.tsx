@@ -29,7 +29,7 @@ export function ProductExplorer({ divisionSlug }: { divisionSlug?: string }) {
   return (
     <div className="grid gap-7">
       {!divisionSlug ? (
-        <div className="sticky top-20 z-30 -mx-4 overflow-x-auto border-y border-medoxy-border bg-[#F0EADF]/90 px-4 py-3 backdrop-blur md:mx-0 md:rounded-lg md:border">
+        <div className="sticky top-20 z-30 -mx-4 overflow-x-auto border-y border-medoxy-border bg-white/90 px-4 py-3 backdrop-blur md:mx-0 md:rounded-lg md:border">
           <div className="flex min-w-max gap-2">
             <a className="rounded-lg bg-medoxy-primary px-4 py-2 text-sm font-bold text-white" href="/divisions">Division</a>
           </div>

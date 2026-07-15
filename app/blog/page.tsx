@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const categories = Array.from(new Set(articles.map((article) => article.category)));
   return (
-    <section className="section-pad">
+    <section className="section-pad section-surface">
       <div className="container-grid">
         <SectionHeader eyebrow="Blog" title="Healthcare trading insights and pharmaceutical product updates." text="Browse Medoxy articles by category, tag, distribution topic, and related healthcare business themes." />
         <div className="mb-8 flex flex-wrap gap-3">
