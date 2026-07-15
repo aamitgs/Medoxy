@@ -22,7 +22,7 @@ export function Footer() {
               <MedoxyLogo className="h-14 w-20" />
             </span>
             <div>
-              <p className="text-sm font-black leading-5">{site.name}</p>
+              <p className="text-xs font-black leading-4">{site.name}</p>
               <p className="text-xs leading-5 text-white/60">Premium healthcare and pharmaceutical solutions.</p>
             </div>
           </div>

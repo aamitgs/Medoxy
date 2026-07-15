@@ -15,13 +15,13 @@ export default function Home() {
           <div>
             <Badge tone="blue">Pharmaceutical Trading</Badge>
             <h1 className="mt-5 text-5xl font-black leading-[1.03] text-medoxy-text md:text-7xl">
-              Medoxy Healthcare Pvt Ltd
+              Medoxy Healthcare
             </h1>
             <p className="mt-4 max-w-xl text-sm uppercase tracking-[0.4em] text-medoxy-secondary/80">
               Trader-focused sourcing, product documentation, and healthcare distribution support.
             </p>
             <p className="mt-6 max-w-2xl text-xl leading-9 text-medoxy-muted">
-              Medoxy Healthcare Pvt Ltd is a pharmaceutical trading company focused on gastroenterology products, reliable sourcing, quality documentation, and responsive inquiry support for providers, distributors, and institutions.
+              Medoxy Healthcare is a pharmaceutical trading company focused on gastroenterology products, reliable sourcing, quality documentation, and responsive inquiry support for providers, distributors, and institutions.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="inline-flex items-center gap-2 rounded-lg bg-medoxy-secondary px-6 py-4 font-black text-white shadow-soft" href="/contact">

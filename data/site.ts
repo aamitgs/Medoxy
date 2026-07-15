@@ -9,10 +9,10 @@ export const site = {
   email: "medoxyhealthcarepvt.ltd@gmail.com",
   phone: "+91 90847 10706",
   address: [
-    "BLOCK D, GALI NO 7, SHYAM KUNJ",
-    "MARUTI KUNJ ROAD, BHONDSI",
-    "GURGAON, HARYANA - 122102",
-    "INDIA",
+    "Block D, Gali No. 7, Shyam Kunj",
+    "Maruti Kunj Road, Bhondsi",
+    "Gurgaon, Haryana - 122102",
+    "India",
   ],
 };
 
