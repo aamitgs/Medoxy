@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ClipboardList, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
 import { divisions } from "@/data/site";
 import { Badge } from "./Badge";
 import { HealthcareVisual } from "./HealthcareVisual";
@@ -47,9 +47,6 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="mt-5 flex flex-wrap gap-3">
           <Link className="inline-flex items-center gap-2 rounded-lg bg-medoxy-primary px-4 py-3 text-sm font-bold text-white" href={`/products/${product.slug}`}>
             <FileText size={16} /> View Details
-          </Link>
-          <Link className="inline-flex items-center gap-2 rounded-lg border border-medoxy-border px-4 py-3 text-sm font-bold text-medoxy-text" href={`/contact?product=${product.slug}`}>
-            <ClipboardList size={16} /> Ask for Documents
           </Link>
         </div>
       </div>
