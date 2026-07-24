@@ -37,7 +37,6 @@ export function HealthcareVisual({
         className,
       )}
     >
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.95)_1px,transparent_1px),linear-gradient(90deg,rgba(46,102,226,0.05)_1px,transparent_1px)] bg-[size:42px_42px]" />
       <div className="absolute -left-24 top-8 h-72 w-72 rounded-full bg-medoxy-primary/15 blur-3xl" />
       <div className="absolute -right-24 top-24 h-72 w-72 rounded-full bg-medoxy-secondary/14 blur-3xl" />
       <div className="absolute -left-10 bottom-10 h-52 w-52 rounded-full bg-white/80 blur-2xl" />

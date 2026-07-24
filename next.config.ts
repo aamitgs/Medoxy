@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Keep development output separate so running `next dev` cannot corrupt
+  // the production build while pages are being generated.
+  distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
   async redirects() {
     return [
       {

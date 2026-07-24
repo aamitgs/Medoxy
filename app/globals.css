@@ -48,35 +48,99 @@ body {
 }
 
 .section-clinical {
-  background: #f4f8ff;
+  background: #f5f7fb;
 }
 
 .section-health {
-  background: #f3fbf7;
+  background: #f5f7fb;
 }
 
 .section-surface {
-  background: #f6f8fa;
-}
-
-.contact-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: linear-gradient(to bottom, black, transparent 92%);
+  background: #f5f7fb;
 }
 
 @layer components {
   .card {
-    @apply rounded-2xl border border-medoxy-border/80 bg-white shadow-soft ring-1 ring-medoxy-primary/10;
+    @apply rounded-3xl border border-white bg-white shadow-[0_16px_44px_rgba(7,27,53,0.07)];
   }
 
   .card-panel {
-    @apply rounded-2xl border border-medoxy-border/70 bg-white/90 shadow-soft backdrop-blur ring-1 ring-medoxy-primary/10;
+    @apply rounded-3xl border border-white bg-white/90 shadow-[0_20px_60px_rgba(7,27,53,0.09)] backdrop-blur;
   }
 
   .card-minimal {
-    @apply rounded-2xl border border-medoxy-border/70 bg-white;
+    @apply rounded-2xl border border-slate-200 bg-white;
   }
+}
+
+.section-pad > .container-grid > .section-header:first-child {
+  position: relative;
+  max-width: none;
+  overflow: hidden;
+  border-radius: 2rem;
+  background: #071b35;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  color: white;
+  box-shadow: 0 28px 80px rgba(7, 27, 53, 0.16);
+}
+
+.section-pad > .container-grid > .section-header:first-child > * {
+  position: relative;
+}
+
+.section-pad > .container-grid > .section-header:first-child h2 {
+  max-width: 60rem;
+  color: white;
+}
+
+.section-pad > .container-grid > .section-header:first-child .section-eyebrow {
+  color: #79a8ff;
+}
+
+.section-pad > .container-grid > .section-header:first-child p:last-child {
+  max-width: 48rem;
+  color: #cbd5e1;
+}
+
+.detail-hero {
+  position: relative;
+  overflow: hidden;
+  background: #071b35;
+  color: white;
+}
+
+.detail-hero > * {
+  position: relative;
+}
+
+.detail-hero h1 {
+  color: white;
+}
+
+.detail-hero nav,
+.detail-hero nav a,
+.detail-hero p.text-medoxy-muted,
+.detail-hero ul {
+  color: #cbd5e1;
+}
+
+.detail-hero p.text-medoxy-primary {
+  color: #93b7ff;
+}
+
+.article-page {
+  background:
+    linear-gradient(to bottom, #071b35 0, #071b35 32rem, #f5f7fb 32rem, #f5f7fb 100%);
+}
+
+.article-page > .container-grid > h1 {
+  color: white;
+}
+
+.article-page > .container-grid > p {
+  color: #cbd5e1;
+}
+
+.article-page .prose {
+  box-shadow: 0 24px 70px rgba(7, 27, 53, 0.14);
 }

@@ -34,7 +34,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
 
   return (
     <>
-      <section className="section-pad section-health">
+      <section className="section-pad detail-hero">
         <div className="container-grid grid gap-10 lg:grid-cols-[1fr_.82fr]">
           <div>
             <nav className="mb-5 text-sm font-bold text-medoxy-muted">

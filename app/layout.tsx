@@ -21,11 +21,20 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.name,
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1730,
+        height: 909,
+        alt: "Medoxy Healthcare — Trusted partnerships. Better healthcare.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Medoxy Healthcare Pvt Ltd",
     description: "Inquiry-led pharmaceutical trading catalog and healthcare product portfolio.",
+    images: ["/og.png"],
   },
   icons: {
     icon: "/favicon.svg",

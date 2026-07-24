@@ -25,7 +25,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   const related = articles.filter((item) => item.slug !== article.slug).slice(0, 2);
 
   return (
-    <section className="section-pad section-surface">
+    <section className="section-pad article-page">
       <div className="container-grid max-w-4xl">
         <Badge>{article.category}</Badge>
         <h1 className="mt-5 text-5xl font-black leading-tight text-medoxy-text md:text-7xl">{article.title}</h1>

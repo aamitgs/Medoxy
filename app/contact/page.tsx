@@ -13,7 +13,6 @@ export default function ContactPage() {
   return (
     <div className="overflow-hidden bg-[#f5f7fb]">
       <section className="relative bg-[#071b35] pb-32 pt-20 text-white md:pb-40 md:pt-28">
-        <div className="absolute inset-0 contact-grid opacity-30" />
         <div className="absolute -right-24 top-10 h-80 w-80 rounded-full bg-medoxy-primary/20 blur-3xl" />
         <div className="container-grid relative">
           <div className="max-w-4xl">

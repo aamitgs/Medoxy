@@ -30,7 +30,9 @@ export default function CareersPage() {
         </div>
         <div>
           <SectionHeader eyebrow="Application Form" title="Send your profile" />
-          <InquiryForm />
+          <div className="rounded-[28px] border border-white bg-white p-7 shadow-[0_20px_60px_rgba(7,27,53,0.08)]">
+            <InquiryForm premium />
+          </div>
         </div>
       </div>
     </section>

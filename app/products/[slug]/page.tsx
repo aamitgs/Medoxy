@@ -32,7 +32,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
   return (
     <>
-      <section className="section-pad section-health">
+      <section className="section-pad detail-hero">
         <div className="container-grid grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
           {product.image ? (
             <div className="overflow-hidden rounded-[28px] bg-white shadow-soft">
@@ -89,7 +89,9 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </div>
           <div>
             <SectionHeader eyebrow="Request Information" title="Ask for product documents" />
-            <InquiryForm productName={product.name} divisionName={division?.name} />
+            <div className="rounded-[28px] border border-white bg-white p-7 shadow-[0_20px_60px_rgba(7,27,53,0.08)]">
+              <InquiryForm premium productName={product.name} divisionName={division?.name} />
+            </div>
           </div>
         </div>
       </section>

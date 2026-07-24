@@ -23,15 +23,15 @@ export function ProductCard({ product }: { product: Product }) {
   const division = divisions.find((item) => item.slug === product.division);
 
   return (
-    <article className="overflow-hidden card transition hover:-translate-y-1 hover:shadow-soft">
+    <article className="group overflow-hidden rounded-[24px] border border-slate-100 bg-white shadow-[0_16px_44px_rgba(7,27,53,0.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(7,27,53,0.13)]">
       <div className="relative bg-gradient-to-b from-white to-medoxy-background">
         <div className="absolute left-4 top-4 z-10 flex flex-wrap items-center gap-2">
           {product.featured ? <Badge tone="red">Featured</Badge> : null}
           {product.popular ? <Badge>Popular</Badge> : null}
         </div>
         {product.image ? (
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <Image src={product.image} alt={product.name} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-cover" />
+          <div className="relative aspect-[4/3] overflow-hidden bg-slate-50">
+            <Image src={product.image} alt={product.name} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.035]" />
           </div>
         ) : (
           <div className="aspect-[4/3] pt-12">
@@ -39,14 +39,14 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
         )}
       </div>
-      <div className="p-5">
-        <p className="text-xs font-black uppercase tracking-wide text-medoxy-primary">{division?.name} / {product.category}</p>
-        <h3 className="mt-3 text-xl font-black text-medoxy-text">{product.name}</h3>
+      <div className="p-6">
+        <p className="text-[11px] font-black uppercase tracking-[0.14em] text-medoxy-primary">{division?.name} / {product.category}</p>
+        <h3 className="mt-3 text-2xl font-black tracking-tight text-[#071b35]">{product.name}</h3>
         <p className="mt-2 text-sm font-semibold text-medoxy-muted">{product.composition}</p>
         <p className="mt-3 min-h-16 text-sm leading-6 text-medoxy-muted">{product.description}</p>
         <div className="mt-5 flex flex-wrap gap-3">
-          <Link className="inline-flex items-center gap-2 rounded-lg bg-medoxy-primary px-4 py-3 text-sm font-bold text-white" href={`/products/${product.slug}`}>
-            <FileText size={16} /> View Details
+          <Link className="inline-flex items-center gap-2 rounded-xl bg-[#071b35] px-4 py-3 text-sm font-black text-white transition hover:bg-medoxy-primary" href={`/products/${product.slug}`}>
+            <FileText size={16} /> View product
           </Link>
         </div>
       </div>
