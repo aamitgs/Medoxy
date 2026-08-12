@@ -15,7 +15,7 @@ import {
 import { ProductCard } from "@/components/ProductCard";
 import { articles, products, stats } from "@/data/site";
 
-const featuredProducts = products.filter((product) => product.featured).slice(0, 4);
+const featuredProducts = products.filter((product) => product.featured).slice(0, 3);
 
 const advantages = [
   {
@@ -184,7 +184,7 @@ export default function Home() {
               View full portfolio <ArrowRight size={18} className="transition group-hover:translate-x-1" />
             </Link>
           </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuredProducts.map((product) => <ProductCard key={product.slug} product={product} />)}
           </div>
         </div>
