@@ -2,24 +2,26 @@ import type { Metadata } from "next";
 import { FlaskConical, Handshake, ShieldCheck, TestTube2 } from "lucide-react";
 import { HealthcareVisual } from "@/components/HealthcareVisual";
 import { SectionHeader } from "@/components/SectionHeader";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Trade & Quality",
-  description: "Pharmaceutical trade quality, sourcing coordination, vendor documentation, and compliance support across Medoxy’s healthcare product portfolio.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Pharmaceutical Trade & Quality Process",
+  description: "A practical overview of Medoxy's product identity, document scope, hand-off, traceability, and exception questions for trade inquiries.",
+  path: "/trade-quality",
+});
 
 export default function TradeQualityPage() {
   const cards = [
-    [Handshake, "Partner Coordination", "Coordinated sourcing and quality-first vendor expectations for distribution-ready products."],
-    [ShieldCheck, "Vendor Documentation", "Documented supply-chain flow, vendor discipline, product documents, and consistent packaging practices."],
-    [TestTube2, "Product Traceability", "Batch-level information, product records, and documentation support for qualified trade partners."],
-    [FlaskConical, "Quality-Aware Sourcing", "Product category checks aligned with partner expectations and applicable compliance requirements."],
+    [Handshake, "Define the request", "Identify the catalogue entry, dosage form, pack, intended market, supply-chain role, and records needed for the next decision."],
+    [ShieldCheck, "Confirm document scope", "Check the issuing entity, product or site covered, version, validity, and applicability instead of relying on a generic badge."],
+    [TestTube2, "Plan traceability", "Agree which identifiers and records should connect order, dispatch, receipt, storage, and onward distribution when applicable."],
+    [FlaskConical, "Escalate exceptions", "Define contacts and evidence for damaged packs, discrepancies, storage deviations, complaints, returns, or other transaction issues."],
   ];
 
   return (
     <section className="section-pad section-surface">
       <div className="container-grid">
-        <SectionHeader eyebrow="Trade & Quality" title="Pharmaceutical trade quality for dependable healthcare distribution." text="Medoxy focuses on sourcing coordination, vendor documentation, product traceability, and distribution-ready support for healthcare partners." />
+        <SectionHeader as="h1" eyebrow="Trade & Quality" title="Ask decision-ready questions before a pharmaceutical trade hand-off." text="Medoxy's catalogue supports an initial B2B conversation. The exact controls and documents must be confirmed for the product, market, and parties involved." />
         <div className="grid gap-8 lg:grid-cols-[1fr_.9fr]">
           <div className="grid gap-5 md:grid-cols-2">
             {cards.map(([Icon, title, text]) => (
@@ -32,6 +34,9 @@ export default function TradeQualityPage() {
           </div>
           <HealthcareVisual title="Pharmaceutical trade quality control" subtitle="Compliance Standards" variant="quality" className="min-h-[520px]" />
         </div>
+        <p className="mt-8 max-w-4xl text-sm leading-7 text-medoxy-muted">
+          This overview is not a certification, audit result, regulatory opinion, or guarantee of document availability. Qualified partners should verify current product-specific records and governing requirements before proceeding.
+        </p>
       </div>
     </section>
   );

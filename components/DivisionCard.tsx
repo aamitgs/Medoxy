@@ -18,10 +18,10 @@ export function DivisionCard({ division }: { division: { slug: DivisionSlug; nam
       <h3 className="text-2xl font-black tracking-tight text-[#071b35]">{division.name}</h3>
       <p className="mt-3 min-h-20 leading-7 text-medoxy-muted">{division.description}</p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <Link className="inline-flex items-center gap-2 rounded-xl bg-[#071b35] px-4 py-3 text-sm font-black text-white transition hover:bg-medoxy-primary" href={`/divisions/${division.slug}`}>
+        <Link className="inline-flex items-center gap-2 rounded-xl bg-[#071b35] px-4 py-3 text-sm font-black text-white transition hover:bg-medoxy-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-medoxy-primary" href={`/divisions/${division.slug}`} aria-label={`View ${division.name} products`}>
           View Products <ArrowRight size={16} />
         </Link>
-        <Link className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-4 py-3 text-sm font-black text-[#071b35] transition hover:border-medoxy-primary hover:text-medoxy-primary" href={`/contact?division=${division.slug}`}>
+        <Link className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-3 text-sm font-black text-[#071b35] transition hover:border-medoxy-primary hover:text-medoxy-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-medoxy-primary" href={`/contact?division=${division.slug}`} aria-label={`Send an inquiry about the ${division.name} division`}>
           <Send size={16} /> Inquiry
         </Link>
       </div>

@@ -3,18 +3,20 @@ import Link from "next/link";
 import { Badge } from "@/components/Badge";
 import { SectionHeader } from "@/components/SectionHeader";
 import { articles } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description: "Healthcare trading insights, pharmaceutical product updates, distribution topics, and quality documentation perspectives from Medoxy Healthcare.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Pharmaceutical Trade & Quality Insights",
+  description: "Evidence-based B2B articles about pharmaceutical distribution, product documentation, quality systems, and responsible catalogue communication.",
+  path: "/blog",
+});
 
 export default function BlogPage() {
   const categories = Array.from(new Set(articles.map((article) => article.category)));
   return (
     <section className="section-pad section-surface">
       <div className="container-grid">
-        <SectionHeader eyebrow="Blog" title="Healthcare trading insights and pharmaceutical product updates." text="Browse Medoxy articles by category, tag, distribution topic, and related healthcare business themes." />
+        <SectionHeader as="h1" eyebrow="Insights" title="Practical pharmaceutical trade and quality guidance." text="B2B articles use named sources, publication and update dates, and clear boundaries between operational guidance and product-specific evidence." />
         <div className="mb-8 flex flex-wrap gap-3">
           {categories.map((category) => <Badge key={category} tone="neutral">{category}</Badge>)}
         </div>
@@ -24,7 +26,7 @@ export default function BlogPage() {
               <Badge>{article.category}</Badge>
               <h2 className="mt-4 text-2xl font-black text-medoxy-text">{article.title}</h2>
               <p className="mt-3 leading-7 text-medoxy-muted">{article.excerpt}</p>
-              <p className="mt-5 text-sm font-bold text-medoxy-muted">{new Date(article.date).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })}</p>
+              <p className="mt-5 text-sm font-bold text-medoxy-muted">Updated {new Date(article.dateModified).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })}</p>
             </Link>
           ))}
         </div>

@@ -16,6 +16,7 @@ const resourceLinks = [
   { label: "Healthcare Insights", href: "/blog" },
   { label: "Trade & Quality", href: "/trade-quality" },
   { label: "Compliance", href: "/certifications-compliance" },
+  { label: "Content Policy", href: "/editorial-policy" },
   { label: "Frequently Asked Questions", href: "/faq" },
   { label: "Careers", href: "/careers" },
 ];
@@ -39,8 +40,8 @@ export function Footer() {
                 Let&apos;s move healthcare forward, together.
               </h2>
               <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-blue-100">
-                <span className="flex items-center gap-2"><Clock3 size={16} /> Response within 1 business day</span>
-                <span className="flex items-center gap-2"><ShieldCheck size={16} /> Confidential business inquiries</span>
+                <span className="flex items-center gap-2"><Clock3 size={16} /> Direct business inquiry route</span>
+                <span className="flex items-center gap-2"><ShieldCheck size={16} /> Consent-based contact form</span>
               </div>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
@@ -136,6 +137,7 @@ export function Footer() {
           <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2" aria-label="Legal links">
             <Link className="transition hover:text-white" href="/privacy">Privacy Policy</Link>
             <Link className="transition hover:text-white" href="/terms">Terms &amp; Disclaimer</Link>
+            <Link className="transition hover:text-white" href="/editorial-policy">Content Policy</Link>
             <Link className="transition hover:text-white" href="/sitemap.xml">Sitemap</Link>
           </nav>
           <p>

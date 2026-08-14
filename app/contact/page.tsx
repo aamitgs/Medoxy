@@ -2,14 +2,24 @@ import type { Metadata } from "next";
 import { ArrowUpRight, Clock3, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { InquiryForm } from "@/components/InquiryForm";
 import { SocialLinks } from "@/components/SocialLinks";
-import { site } from "@/data/site";
+import { divisions, site } from "@/data/site";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Contact Medoxy Healthcare Pvt Ltd for product, distributor, healthcare provider, and partnership inquiries.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact Medoxy Healthcare",
+  description: "Contact Medoxy for product-document, distributor, healthcare organization, and pharmaceutical trade partnership inquiries.",
+  path: "/contact",
+});
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ division?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const requestedDivision = Array.isArray(params.division) ? params.division[0] : params.division;
+  const divisionName = divisions.find((division) => division.slug === requestedDivision)?.name;
+
   return (
     <div className="overflow-hidden bg-[#f5f7fb]">
       <section className="relative bg-[#071b35] pb-32 pt-20 text-white md:pb-40 md:pt-28">
@@ -28,8 +38,8 @@ export default function ContactPage() {
               Whether you need product documentation, distribution support, or a trade partnership, our team is ready to help you move forward with clarity.
             </p>
             <div className="mt-9 flex flex-wrap gap-x-8 gap-y-4 text-sm font-semibold text-slate-200">
-              <span className="flex items-center gap-2"><Clock3 size={17} className="text-[#79a8ff]" /> Response within 1 business day</span>
-              <span className="flex items-center gap-2"><ShieldCheck size={17} className="text-[#55d6a9]" /> Confidential business inquiries</span>
+              <span className="flex items-center gap-2"><Clock3 size={17} className="text-[#79a8ff]" /> Direct business inquiry route</span>
+              <span className="flex items-center gap-2"><ShieldCheck size={17} className="text-[#55d6a9]" /> Consent-based contact form</span>
             </div>
           </div>
         </div>
@@ -87,7 +97,7 @@ export default function ContactPage() {
                 <div className="flex items-center justify-between gap-4 px-4 py-4">
                   <div>
                     <p className="text-sm font-extrabold text-[#071b35]">Gurgaon, Haryana</p>
-                    <p className="mt-1 text-xs text-slate-500">Corporate office</p>
+                    <p className="mt-1 text-xs text-slate-500">Listed business address</p>
                   </div>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Bhondsi+Gurgaon+Haryana+122102+India"
@@ -107,7 +117,7 @@ export default function ContactPage() {
                 <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] text-[#071b35] md:text-4xl">Tell us how we can help.</h2>
                 <p className="mt-3 max-w-xl leading-7 text-medoxy-muted">Share a few details and the right member of our team will respond directly.</p>
               </div>
-              <InquiryForm premium />
+              <InquiryForm premium divisionName={divisionName} />
             </div>
           </div>
         </div>

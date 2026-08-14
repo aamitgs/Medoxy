@@ -10,74 +10,43 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: "Medoxy Healthcare Pvt Ltd | Pharmaceutical Trading Company",
-    template: "%s | Medoxy Healthcare Pvt Ltd",
-  },
-  description:
-    "Medoxy Healthcare Pvt Ltd is an inquiry-focused pharmaceutical trading company showcasing gastroenterology products, trade quality, product documentation, and distributor partnership opportunities.",
-  openGraph: {
-    title: "Medoxy Healthcare Pvt Ltd",
-    description: "Pharmaceutical trading company with a focused gastroenterology product portfolio.",
-    url: site.url,
-    siteName: site.name,
-    type: "website",
-    images: [
-      {
-        url: "/og.png",
-        width: 1730,
-        height: 909,
-        alt: "Medoxy Healthcare — Trusted partnerships. Better healthcare.",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Medoxy Healthcare Pvt Ltd",
-    description: "Inquiry-led pharmaceutical trading catalog and healthcare product portfolio.",
-    images: ["/og.png"],
+    template: "%s | Medoxy",
   },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
   },
-  alternates: {
-    canonical: site.url,
-  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    name: site.name,
-    email: site.email,
-    telephone: site.phone,
-    url: site.url,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "BLOCK D, GALI NO 7, SHYAM KUNJ, MARUTI KUNJ ROAD, BHONDSI",
-      addressLocality: "Gurgaon",
-      addressRegion: "Haryana",
-      postalCode: "122102",
-      addressCountry: "IN",
-    },
-  };
+  const googleAnalyticsId =
+    process.env.NEXT_PUBLIC_GA_ID ?? process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
   return (
-    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className="font-sans" suppressHydrationWarning>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-QYL11HEL3X"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
+    <html lang="en" data-scroll-behavior="smooth">
+      <body className="font-sans">
+        <a
+          href="#main-content"
+          className="sr-only z-[100] rounded-lg bg-white px-4 py-3 font-bold text-[#071b35] shadow-lg focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Skip to main content
+        </a>
+        {googleAnalyticsId ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+              strategy="lazyOnload"
+            />
+            <Script id="google-analytics" strategy="lazyOnload">
+              {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-QYL11HEL3X');`}
-        </Script>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+gtag('config', '${googleAnalyticsId}', { anonymize_ip: true });`}
+            </Script>
+          </>
+        ) : null}
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
         <Analytics />
       </body>

@@ -7,7 +7,7 @@ const config: Config = {
       colors: {
         medoxy: {
           primary: "#2E66E2",
-          secondary: "#E53935",
+          secondary: "#D32F2F",
           background: "#FFFFFF",
           surface: "#F6F8FA",
           clinical: "#F4F8FF",

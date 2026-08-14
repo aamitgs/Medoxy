@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,7 +14,20 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
-import { articles, products, stats } from "@/data/site";
+import { JsonLd } from "@/components/JsonLd";
+import { articles, products, site, socialLinks, stats } from "@/data/site";
+import { absoluteUrl, createPageMetadata } from "@/lib/seo";
+
+const description =
+  "Explore Medoxy Healthcare's gastroenterology catalogue and request product documents or pharmaceutical trade partnership information.";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Medoxy Healthcare Pvt Ltd | Pharmaceutical Trading Company",
+  socialTitle: "Medoxy Healthcare Pvt Ltd",
+  description,
+  path: "/",
+  absoluteTitle: true,
+});
 
 const featuredProducts = products.filter((product) => product.featured).slice(0, 3);
 
@@ -27,20 +41,74 @@ const advantages = [
   {
     icon: ShieldCheck,
     number: "02",
-    title: "Quality aware",
-    text: "Partner expectations shaped around responsible sourcing and compliance-led communication.",
+    title: "Evidence aware",
+    text: "Product and trade questions framed around scope, current records, and the proposed market.",
   },
   {
     icon: Handshake,
     number: "03",
     title: "Partnership focused",
-    text: "Responsive coordination for distributors, healthcare providers, and institutions.",
+    text: "A direct inquiry route for distributors, healthcare organizations, and institutions.",
   },
 ];
 
 export default function Home() {
+  const organizationId = `${site.url}/#organization`;
+  const websiteId = `${site.url}/#website`;
+  const homepageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": organizationId,
+        name: site.name,
+        alternateName: site.shortName,
+        url: site.url,
+        logo: {
+          "@type": "ImageObject",
+          "@id": `${site.url}/#logo`,
+          url: absoluteUrl("/favicon.svg"),
+          contentUrl: absoluteUrl("/favicon.svg"),
+          width: 512,
+          height: 512,
+          caption: site.name,
+        },
+        email: site.email,
+        telephone: site.phone,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Block D, Gali No. 7, Shyam Kunj, Maruti Kunj Road, Bhondsi",
+          addressLocality: "Gurgaon",
+          addressRegion: "Haryana",
+          postalCode: "122102",
+          addressCountry: "IN",
+        },
+        sameAs: socialLinks.map(({ href }) => href),
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "business inquiries",
+          email: site.email,
+          telephone: site.phone,
+          url: absoluteUrl("/contact"),
+          areaServed: "IN",
+          availableLanguage: "English",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: site.url,
+        name: site.name,
+        alternateName: site.shortName,
+        inLanguage: "en-IN",
+        publisher: { "@id": organizationId },
+      },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={homepageSchema} />
       <section className="relative isolate overflow-hidden bg-[#071b35] text-white">
         <div className="absolute -left-36 top-36 h-96 w-96 rounded-full bg-medoxy-primary/25 blur-3xl" />
         <div className="absolute -right-32 top-0 h-[32rem] w-[32rem] rounded-full bg-[#174b91]/40 blur-3xl" />
@@ -76,7 +144,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-semibold text-slate-300">
-              {["Quality-aware sourcing", "Inquiry-led support", "Partner ready"].map((item) => (
+              {["B2B catalogue", "Inquiry-led support", "Product-specific review"].map((item) => (
                 <span key={item} className="flex items-center gap-2">
                   <span className="grid h-5 w-5 place-items-center rounded-full bg-[#55d6a9]/15 text-[#55d6a9]">
                     <Check size={12} strokeWidth={3} />
@@ -120,7 +188,7 @@ export default function Home() {
               </span>
               <span>
                 <span className="block text-xs font-bold uppercase tracking-wider text-slate-400">Portfolio</span>
-                <span className="mt-1 block font-black text-[#071b35]">Distributor ready</span>
+                <span className="mt-1 block font-black text-[#071b35]">Inquiry ready</span>
               </span>
             </div>
           </div>
@@ -153,7 +221,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-xl text-lg leading-8 text-medoxy-muted lg:pb-2">
-              We bring structure, clarity, and responsiveness to pharmaceutical sourcing and partnership discussions.
+              The site structures product discovery, documentation questions, and the next qualified business conversation.
             </p>
           </div>
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
@@ -208,8 +276,8 @@ export default function Home() {
           <div className="grid gap-4">
             {[
               ["01", "Share your requirement", "Tell us your product interest, market, and business needs."],
-              ["02", "Review the portfolio", "Receive relevant product information and documentation."],
-              ["03", "Build the partnership", "Move forward with responsive commercial coordination."],
+              ["02", "Review the portfolio", "Compare the listed catalogue fields and identify the records needed for your decision."],
+              ["03", "Clarify the next step", "Medoxy can confirm what information is applicable and available for the defined request."],
             ].map(([number, title, text]) => (
               <div key={number} className="grid gap-4 rounded-2xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur sm:grid-cols-[auto_1fr] sm:items-center">
                 <span className="grid h-14 w-14 place-items-center rounded-2xl bg-medoxy-primary text-lg font-black">{number}</span>

@@ -2,24 +2,26 @@ import type { Metadata } from "next";
 import { FlaskConical, Lightbulb, Microscope, Route } from "lucide-react";
 import { HealthcareVisual } from "@/components/HealthcareVisual";
 import { SectionHeader } from "@/components/SectionHeader";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Portfolio Development",
-  description: "Medoxy portfolio planning, product selection, category research, and future healthcare trading initiatives.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Pharmaceutical Portfolio Development",
+  description: "How Medoxy evaluates catalogue fit, product information, category context, and partner demand before considering portfolio additions.",
+  path: "/portfolio-development",
+});
 
 export default function PortfolioDevelopmentPage() {
   const items = [
-    [Lightbulb, "Portfolio Planning", "Product selection guided by therapeutic relevance, market need, and healthcare usability."],
-    [FlaskConical, "Product Information", "Composition review, dosage form mapping, packaging review, and information readiness."],
-    [Microscope, "Category Research", "Clinical category research, competitive mapping, and quality documentation review."],
-    [Route, "Future Initiatives", "Expansion across gastroenterology products, institutional demand, and partner-led access channels."],
+    [Lightbulb, "Catalogue fit", "Define the intended business audience, therapeutic category, destination market, and unmet information need."],
+    [FlaskConical, "Product information", "Check the proposed composition listing, dosage form, pack configuration, and available controlled records."],
+    [Microscope, "Category context", "Review market context, catalogue overlap, partner questions, and applicable product-information boundaries."],
+    [Route, "Decision gate", "Record unresolved classification, evidence, supply, and market questions before any public listing or trade discussion."],
   ];
 
   return (
     <section className="section-pad section-health">
       <div className="container-grid">
-        <SectionHeader eyebrow="Portfolio Development" title="Healthcare product planning for a focused pharmaceutical trading portfolio." />
+        <SectionHeader as="h1" eyebrow="Portfolio Development" title="A documented path from portfolio idea to qualified review." text="This page explains a planning approach, not a claim that any future product is approved, available, or scheduled for launch." />
         <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
           <HealthcareVisual title="Portfolio planning and product information" subtitle="Trade Development" variant="trade" className="min-h-[520px]" />
           <div className="grid gap-5">

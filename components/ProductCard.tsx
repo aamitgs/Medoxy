@@ -27,7 +27,7 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="relative bg-gradient-to-b from-white to-medoxy-background">
         {product.image ? (
           <div className="relative aspect-[4/3] overflow-hidden bg-white p-3">
-            <Image src={product.image} alt={product.name} fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="object-contain p-3 transition duration-500 group-hover:scale-[1.025]" />
+            <Image src={product.image} alt={`${product.name} pharmaceutical product packaging`} fill sizes="(min-width: 1280px) 378px, (min-width: 1024px) calc((100vw - 80px) / 3), (min-width: 768px) calc((100vw - 56px) / 2), calc(100vw - 32px)" className="object-contain p-3 transition duration-500 group-hover:scale-[1.025]" />
           </div>
         ) : (
           <div className="aspect-[4/3] pt-12">
@@ -41,7 +41,7 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="mt-2 text-sm font-semibold text-medoxy-muted">{product.composition}</p>
         <p className="mt-3 min-h-16 text-sm leading-6 text-medoxy-muted">{product.description}</p>
         <div className="mt-5 flex flex-wrap gap-3">
-          <Link className="inline-flex items-center gap-2 rounded-xl bg-[#071b35] px-4 py-3 text-sm font-black text-white transition hover:bg-medoxy-primary" href={`/products/${product.slug}`}>
+          <Link className="inline-flex items-center gap-2 rounded-xl bg-[#071b35] px-4 py-3 text-sm font-black text-white transition hover:bg-medoxy-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-medoxy-primary" href={`/products/${product.slug}`} aria-label={`View ${product.name} product details`}>
             <FileText size={16} /> View product
           </Link>
         </div>
