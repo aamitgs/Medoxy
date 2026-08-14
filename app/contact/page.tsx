@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ArrowUpRight, Clock3, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { InquiryForm } from "@/components/InquiryForm";
 import { SocialLinks } from "@/components/SocialLinks";
-import { divisions, site } from "@/data/site";
+import { site } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -11,15 +11,7 @@ export const metadata: Metadata = createPageMetadata({
   path: "/contact",
 });
 
-export default async function ContactPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ division?: string | string[] }>;
-}) {
-  const params = await searchParams;
-  const requestedDivision = Array.isArray(params.division) ? params.division[0] : params.division;
-  const divisionName = divisions.find((division) => division.slug === requestedDivision)?.name;
-
+export default function ContactPage() {
   return (
     <div className="overflow-hidden bg-[#f5f7fb]">
       <section className="relative bg-[#071b35] pb-32 pt-20 text-white md:pb-40 md:pt-28">
@@ -57,7 +49,7 @@ export default async function ContactPage({
                   <a href={`mailto:${site.email}`} className="group flex items-center gap-4 py-5 first:pt-0">
                     <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-blue-50 text-medoxy-primary"><Mail size={21} /></span>
                     <span className="min-w-0 flex-1">
-                      <span className="block text-xs font-bold uppercase tracking-wider text-slate-400">Email us</span>
+                      <span className="block text-xs font-bold uppercase tracking-wider text-slate-600">Email us</span>
                       <span className="mt-1 block truncate font-bold text-[#071b35]">{site.email}</span>
                     </span>
                     <ArrowUpRight size={19} className="text-slate-300 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-medoxy-primary" />
@@ -65,7 +57,7 @@ export default async function ContactPage({
                   <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="group flex items-center gap-4 py-5">
                     <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-red-50 text-medoxy-secondary"><Phone size={21} /></span>
                     <span className="flex-1">
-                      <span className="block text-xs font-bold uppercase tracking-wider text-slate-400">Call us</span>
+                      <span className="block text-xs font-bold uppercase tracking-wider text-slate-600">Call us</span>
                       <span className="mt-1 block font-bold text-[#071b35]">{site.phone}</span>
                     </span>
                     <ArrowUpRight size={19} className="text-slate-300 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-medoxy-secondary" />
@@ -81,7 +73,7 @@ export default async function ContactPage({
                   </div>
                 </div>
                 <div className="mt-6 flex items-center justify-between gap-4">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Follow Medoxy</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Follow Medoxy</span>
                   <SocialLinks tone="dark" />
                 </div>
               </div>
@@ -117,7 +109,7 @@ export default async function ContactPage({
                 <h2 className="mt-3 text-3xl font-black tracking-[-0.03em] text-[#071b35] md:text-4xl">Tell us how we can help.</h2>
                 <p className="mt-3 max-w-xl leading-7 text-medoxy-muted">Share a few details and the right member of our team will respond directly.</p>
               </div>
-              <InquiryForm premium divisionName={divisionName} />
+              <InquiryForm premium prefillDivisionFromQuery />
             </div>
           </div>
         </div>

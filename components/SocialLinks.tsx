@@ -1,9 +1,7 @@
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { socialLinks } from "@/data/site";
 
 const icons = {
-  Facebook,
-  Instagram,
   LinkedIn: Linkedin,
 };
 

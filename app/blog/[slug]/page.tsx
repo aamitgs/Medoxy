@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Building2, CalendarDays, ExternalLink } from "lucide-react";
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!article) return { title: "Article" };
 
   const url = `${site.url}/blog/${article.slug}`;
+  const socialImage = `${url}/opengraph-image`;
   return {
     title: article.title,
     description: article.excerpt,
@@ -39,13 +41,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       modifiedTime: article.dateModified,
       authors: [article.author.url],
       tags: article.tags,
-      images: [],
+      images: [{
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        alt: `${article.title} — ${site.shortName}`,
+      }],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
-      images: [],
+      images: [socialImage],
     },
   };
 }
@@ -57,11 +64,18 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
 
   const related = articles.filter((item) => item.slug !== article.slug).slice(0, 2);
   const url = `${site.url}/blog/${article.slug}`;
+  const socialImage = `${url}/opengraph-image`;
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: article.title,
     description: article.excerpt,
+    image: {
+      "@type": "ImageObject",
+      url: socialImage,
+      width: 1200,
+      height: 630,
+    },
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     datePublished: article.datePublished,
@@ -77,6 +91,12 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
       "@type": "Organization",
       name: site.name,
       url: site.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${site.url}/favicon.svg`,
+        width: 512,
+        height: 512,
+      },
     },
     citation: article.sources.map((source) => source.url),
     isAccessibleForFree: true,
@@ -113,6 +133,16 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
           <Badge>{article.category}</Badge>
           <h1 className="mt-5 text-5xl font-black leading-tight text-medoxy-text md:text-7xl">{article.title}</h1>
           <p className="mt-6 text-xl leading-8 text-medoxy-muted">{article.excerpt}</p>
+
+          <Image
+            src={`/blog/${article.slug}/opengraph-image`}
+            alt={`Illustrated title card for ${article.title}`}
+            width={1200}
+            height={630}
+            priority
+            unoptimized
+            className="mt-8 h-auto w-full rounded-[24px] border border-slate-200 shadow-[0_18px_55px_rgba(7,27,53,.12)]"
+          />
 
           <div className="mt-7 flex flex-wrap gap-x-7 gap-y-3 border-y border-slate-200 py-5 text-sm font-bold text-medoxy-muted">
             <span className="inline-flex items-center gap-2">

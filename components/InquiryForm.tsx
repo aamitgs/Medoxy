@@ -2,7 +2,7 @@
 
 import { ChevronDown, Send } from "lucide-react";
 import Link from "next/link";
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { divisions, products } from "@/data/site";
 
 const inquiryTypes = ["Product Documents Request", "Distributor Inquiry", "Healthcare Provider Inquiry", "Trade Partnership Inquiry", "Career Inquiry"];
@@ -11,16 +11,19 @@ export function InquiryForm({
   productName,
   divisionName,
   initialInquiryType,
+  prefillDivisionFromQuery = false,
   premium = false,
 }: {
   productName?: string;
   divisionName?: string;
   initialInquiryType?: (typeof inquiryTypes)[number];
+  prefillDivisionFromQuery?: boolean;
   premium?: boolean;
 }) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
   const honeypotId = useId();
+  const interestSelectRef = useRef<HTMLSelectElement>(null);
   const careerMode = initialInquiryType === "Career Inquiry";
   const interestOptions = Array.from(new Set([
     ...(productName ? [productName] : []),
@@ -28,6 +31,14 @@ export function InquiryForm({
     ...divisions.map((division) => division.name),
     ...products.map((product) => product.name),
   ]));
+
+  useEffect(() => {
+    if (!prefillDivisionFromQuery || !interestSelectRef.current) return;
+
+    const divisionSlug = new URLSearchParams(window.location.search).get("division");
+    const queryDivision = divisions.find((division) => division.slug === divisionSlug);
+    if (queryDivision) interestSelectRef.current.value = queryDivision.name;
+  }, [prefillDivisionFromQuery]);
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -107,7 +118,7 @@ export function InquiryForm({
       ) : (
         <label className="relative grid gap-2">
           <span className={labelClass}>Product interest</span>
-          <select name="productInterest" defaultValue={productName || divisionName || ""} className={`${inputClass} appearance-none pr-10`}>
+          <select ref={interestSelectRef} name="productInterest" defaultValue={productName || divisionName || ""} className={`${inputClass} appearance-none pr-10`}>
             <option value="">Select a product or division</option>
             {interestOptions.map((interest) => <option key={interest}>{interest}</option>)}
           </select>

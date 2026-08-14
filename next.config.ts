@@ -1,7 +1,25 @@
 import type { NextConfig } from "next";
 
+const contentSecurityPolicyReportOnly = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  "object-src 'none'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://va.vercel-scripts.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https://www.google-analytics.com https://*.google-analytics.com",
+  "font-src 'self' data:",
+  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com",
+  "frame-src https://www.google.com",
+  "media-src 'self'",
+  "worker-src 'self' blob:",
+  "manifest-src 'self'",
+].join("; ");
+
 const nextConfig: NextConfig = {
   devIndicators: false,
+  poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
   },
@@ -21,6 +39,11 @@ const nextConfig: NextConfig = {
         destination: "/portfolio-development",
         permanent: true,
       },
+      {
+        source: "/blog/gastroenterology-products-for-clinical-discovery",
+        destination: "/blog/gastroenterology-catalogue-evaluation",
+        permanent: true,
+      },
     ];
   },
   async headers() {
@@ -34,6 +57,11 @@ const nextConfig: NextConfig = {
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
+          },
+          {
+            // Monitor violations before promoting this policy to enforcement.
+            key: "Content-Security-Policy-Report-Only",
+            value: contentSecurityPolicyReportOnly,
           },
         ],
       },

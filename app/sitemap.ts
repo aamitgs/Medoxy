@@ -42,13 +42,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: contentLastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,
-      images: [`${site.url}${product.image}`],
+      ...(product.image ? { images: [`${site.url}${product.image}`] } : {}),
     })),
     ...articles.map((article) => ({
       url: `${site.url}/blog/${article.slug}`,
       lastModified: article.dateModified,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+      images: [`${site.url}/blog/${article.slug}/opengraph-image`],
     })),
   ];
 }

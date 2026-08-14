@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!division) return { title: "Division" };
 
   const url = `${site.url}/divisions/${division.slug}`;
+  const socialImage = `${site.url}/og-medoxy.jpg`;
   return {
     title: division.name,
     description: division.description,
@@ -27,13 +28,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: `${division.name} Product Division | ${site.shortName}`,
       description: division.description,
       siteName: site.name,
-      images: [],
+      images: [{
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        alt: "Medoxy Healthcare — Trusted partnerships. Better healthcare.",
+      }],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: `${division.name} Product Division | ${site.shortName}`,
       description: division.description,
-      images: [],
+      images: [socialImage],
     },
   };
 }

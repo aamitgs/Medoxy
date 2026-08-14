@@ -11,7 +11,7 @@ export const metadata: Metadata = createPageMetadata({
   path: "/gallery",
 });
 
-const galleryProducts = products.slice(0, 6);
+const galleryProducts = products.filter((product) => product.image).slice(0, 6);
 
 export default function GalleryPage() {
   return (

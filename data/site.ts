@@ -17,8 +17,6 @@ export const site = {
 };
 
 export const socialLinks = [
-  { label: "Facebook", href: "https://www.facebook.com/medoxyhealthcare" },
-  { label: "Instagram", href: "https://www.instagram.com/medoxyhealthcare" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/medoxy-healthcare" },
 ] as const;
 
@@ -116,9 +114,9 @@ export const products = [
     composition: "Sucralfate + Oxetacaine",
     dosageForm: "Suspension",
     packaging: "200 ml bottle",
-    description: "B2B catalogue entry for a suspension listed with sucralfate and oxetacaine, presented for pack, documentation, and availability inquiries.",
-    image: "/products/front-ushield.jpg",
-    gallery: ["/products/gallery/ushield-1.jpg", "/products/gallery/ushield-2.jpg", "/products/gallery/ushield-3.jpg", "/products/gallery/ushield-5.jpg"],
+    description: "B2B catalogue entry for a suspension listed with sucralfate and oxetacaine. Public pack imagery is withheld pending claim and document review; qualified organizations may request current, applicable information.",
+    image: "",
+    gallery: [],
     featured: false,
     popular: true,
   },
@@ -132,7 +130,7 @@ export const products = [
     packaging: "10 x 10 Tablets",
     description: "B2B catalogue entry for a tablet listed with esomeprazole 40 mg and sodium bicarbonate as a buffer, subject to current document verification.",
     image: "/products/front-esomizole-40.jpg",
-    gallery: ["/products/gallery/esomizole-40-1.jpg", "/products/gallery/esomizole-40-2.jpg", "/products/gallery/esomizole-40-3.jpg", "/products/gallery/esomizole-40-4.jpg", "/products/gallery/esomizole-40-5.jpg", "/products/gallery/esomizole-40-6.jpg"],
+    gallery: ["/products/gallery/esomizole-40-1.jpg", "/products/gallery/esomizole-40-2.jpg", "/products/gallery/esomizole-40-4.jpg", "/products/gallery/esomizole-40-5.jpg", "/products/gallery/esomizole-40-6.jpg"],
     featured: false,
     popular: true,
   },
@@ -214,9 +212,9 @@ export const products = [
     composition: "Sodium Alginate + Sodium Bicarbonate + Calcium Carbonate",
     dosageForm: "Oral Suspension",
     packaging: "200 ml bottle",
-    description: "B2B catalogue entry for an oral suspension listed with sodium alginate, sodium bicarbonate, and calcium carbonate, presented for product-information requests.",
-    image: "/products/front-u-raft.jpg",
-    gallery: ["/products/gallery/u-raft-1.jpg", "/products/gallery/u-raft-2.jpg", "/products/gallery/u-raft-3.jpg", "/products/gallery/u-raft-4.jpg", "/products/gallery/u-raft-6.jpg"],
+    description: "B2B catalogue entry for an oral suspension listed with sodium alginate, sodium bicarbonate, and calcium carbonate. Public pack imagery is withheld pending claim and document review; qualified organizations may request current, applicable information.",
+    image: "",
+    gallery: [],
     featured: false,
     popular: true,
   },
@@ -453,7 +451,7 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: "gastroenterology-products-for-clinical-discovery",
+    slug: "gastroenterology-catalogue-evaluation",
     title: "Gastroenterology Catalogue Evaluation for B2B Sourcing",
     category: "Catalogue Evaluation",
     excerpt: "A non-clinical method for navigating categories, comparing listed product attributes, and defining the documents needed for a qualified sourcing review.",

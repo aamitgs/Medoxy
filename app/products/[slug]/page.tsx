@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!product) return { title: "Product" };
 
   const url = `${site.url}/products/${product.slug}`;
-  const image = `${site.url}${product.image}`;
+  const image = product.image ? `${site.url}${product.image}` : `${site.url}/og-medoxy.jpg`;
   const metaDescription = `${product.name}: ${product.dosageForm}, ${product.packaging}. B2B product details and applicable document inquiries with Medoxy.`;
 
   return {
@@ -34,7 +34,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: `${product.name} | ${site.shortName}`,
       description: metaDescription,
       siteName: site.name,
-      images: [{ url: image, alt: `${product.name} product pack` }],
+      images: [{
+        url: image,
+        width: 1200,
+        height: 630,
+        alt: product.image ? `${product.name} catalogue image` : `${site.shortName} catalogue`,
+      }],
     },
     twitter: {
       card: "summary_large_image",
@@ -58,22 +63,28 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const related = [...sameCategory, ...sameDivision].slice(0, 4);
   const productUrl = `${site.url}/products/${product.slug}`;
   const divisionUrl = division ? `${site.url}/divisions/${division.slug}` : `${site.url}/divisions`;
-  const productImages = [product.image, ...(product.gallery ?? [])].map((image) => `${site.url}${image}`);
+  const productImages = [product.image, ...(product.gallery ?? [])]
+    .filter(Boolean)
+    .map((image) => `${site.url}${image}`);
 
-  const productSchema = {
+  const productPageSchema = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "WebPage",
     name: product.name,
     url: productUrl,
-    image: productImages,
     description: product.description,
-    category: product.category,
-    additionalProperty: [
-      { "@type": "PropertyValue", name: "Composition as listed", value: product.composition },
-      { "@type": "PropertyValue", name: "Dosage form as listed", value: product.dosageForm },
-      { "@type": "PropertyValue", name: "Commercial pack as listed", value: product.packaging },
-      { "@type": "PropertyValue", name: "Portfolio division", value: division?.name ?? product.division },
-    ],
+    isPartOf: { "@type": "WebSite", name: site.name, url: site.url },
+    ...(productImages.length ? {
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: productImages[0],
+      },
+    } : {}),
+    about: {
+      "@type": "Thing",
+      name: product.name,
+      description: `${product.composition}; ${product.dosageForm}; ${product.packaging}; ${product.category}.`,
+    },
   };
 
   const breadcrumbSchema = {
@@ -91,7 +102,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productPageSchema).replace(/</g, "\\u003c") }}
       />
       <script
         type="application/ld+json"
