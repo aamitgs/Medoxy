@@ -17,7 +17,10 @@ export const site = {
 };
 
 export const socialLinks = [
+  { label: "Facebook", href: "https://www.facebook.com/medoxyhealthcare" },
+  { label: "Instagram", href: "https://www.instagram.com/medoxyhealthcare" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/medoxy-healthcare" },
+  { label: "YouTube", href: "https://www.youtube.com/@medoxyhealthcare" },
 ] as const;
 
 export const nav = [

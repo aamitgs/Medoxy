@@ -1,8 +1,11 @@
-import { Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { socialLinks } from "@/data/site";
 
 const icons = {
+  Facebook,
+  Instagram,
   LinkedIn: Linkedin,
+  YouTube: Youtube,
 };
 
 export function SocialLinks({ tone = "light" }: { tone?: "light" | "dark" }) {

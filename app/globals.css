@@ -93,7 +93,7 @@ body {
   position: relative;
 }
 
-.section-pad > .container-grid > .section-header:first-child h2 {
+.section-pad > .container-grid > .section-header:first-child :is(h1, h2) {
   max-width: 60rem;
   color: white;
 }
