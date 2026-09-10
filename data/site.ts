@@ -6,7 +6,7 @@ export const site = {
   name: "Medoxy Healthcare Pvt Ltd",
   shortName: "Medoxy",
   url: "https://www.medoxyhealthcare.com",
-  email: "info@medoxyhealthcare.com",
+  email: "Medoxyhealthcarellp@gmail.com",
   phone: "+91 90847 10706",
   address: [
     "Block D, Gali No. 7, Shyam Kunj",
