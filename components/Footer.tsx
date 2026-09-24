@@ -11,6 +11,7 @@ import {
 import { divisions, nav, site } from "@/data/site";
 import { MedoxyLogo } from "./MedoxyLogo";
 import { SocialLinks } from "./SocialLinks";
+import { FooterNotes } from "./FooterNotes";
 
 const resourceLinks = [
   { label: "Healthcare Insights", href: "/blog" },
@@ -27,6 +28,8 @@ export function Footer() {
   );
 
   return (
+    <>
+    <FooterNotes />
     <footer className="relative overflow-hidden bg-[#06172d] text-white">
       <div className="absolute -right-36 top-20 h-[30rem] w-[30rem] rounded-full bg-medoxy-primary/15 blur-3xl" />
 
@@ -149,5 +152,6 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }
